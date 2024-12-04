@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Rosetta Docking"
+title: "RosettaDock-5.0"
 date: 2024-11-31
 categories: [Bioinformatics, Docking]
 tags: [Bioinformatics, docking]
@@ -9,39 +9,112 @@ tags: [Bioinformatics, docking]
 
 ---
 
-
-# **Rosetta Docking Options Guide**
-
-## **1. Introduction**
-Rosetta 도킹은 단백질-단백질 및 단백질-리간드 상호작용을 예측하기 위한 강력한 도구입니다. 이 가이드에서는 도킹 프로토콜 실행 시 사용할 수 있는 주요 옵션과 그 사용법을 정리합니다.
+## **RosettaDock-5.0 개요**
+- 단백질-단백질 복합체 구조 예측.
+- 결합 위치의 구조적 변화와 상호작용 에너지 계산.
 
 ---
 
-## **2. General Options**
+## **1. RosettaDock-5.0 Quick Start**
 
-### **Input/Output**
-- **`-s`**: 입력 구조 파일(PDB)을 지정합니다.
-  ```bash
-  -s input.pdb
-  ```
-- **`-out:path:all`**: 출력 파일 경로를 지정합니다.
-  ```bash
+### **입력파일**
+
+- PDB 파일(.pdb): PyMol을 사용해 두 단백질을 적절한 위치로 배치, 도킹할 각 파트너를 별도의 체인으로 정의. 
+- 예: 항체(H, L 체인)와 항원(A, B 체인)을 도킹하려면 H-L과 A-B를 각각 하나의 파트너로 설정.
+
+### **기본 실행 명령**
+
+- **`-s`**: 입력 구조 파일(PDB)을 지정.
+- **`-out:path:all`**: 출력 파일 경로를 지정.
+- **`-nstruct`**: 생성할 구조의 수를 지정.
+
+```bash
+./bin/docking_protocol.default.linuxgccrelease \
+  -s input.pdb \
+  -docking:partners A_B \
+  -nstruct 10 \
   -out:path:all /path/to/output/
-  ```
-- **`-nstruct`**: 생성할 구조의 수를 지정합니다.
-  ```bash
-  -nstruct 10
-  ```
+```
 
-### **Score Functions**
-- **`-score:weights`**: 사용할 점수 함수(weight set)를 지정합니다.
-  ```bash
-  -score:weights ref15
-  ```
+### **예시**
+
+```bash
+./bin/docking_protocol.default.linuxgccrelease \
+  -s input/thr_VHVL.pdb \
+  -docking:partners VH_VL \
+  -nstruct 10 \
+  -out:path:all /mnt/c/Users/MARS/rosettadock/main/source/output/
+```
+
+### **리간드 도킹 예시**
+
+```bash
+./bin/docking_protocol.default.linuxgccrelease \
+  -s receptor_ligand.pdb \
+  -docking:ligand true \
+  -docking:ligand:protocol full \
+  -docking:ligand:soft_rep true \
+  -nstruct 20 \
+  -out:path:all /path/to/output/
+```
 
 ---
 
-## **3. Docking Options**
+### **2. 출력 파일**
+
+**1. 모델 구조 파일`(.pdb)`**
+- 각 도킹 시뮬레이션에서 생성된 **구조 파일**.
+- 경로: --resnam 옵션에서 지정한 위치.
+
+**2. 품질 평가 점수 파일`(.sc)`**
+- 도킹 결과의 **에너지 및 품질 메트릭**을 포함하는 파일. 
+- 보통 `score.sc` 파일로 생성되며, 텍스트 파일 형식.
+
+---
+
+
+### **3. 출력 파일 해석**
+
+`score.sc` 파일은 다음과 같은 주요 정보를 포함합니다:
+
+| 컬럼 이름         | 설명                                                                                     |
+|-------------------|------------------------------------------------------------------------------------------|
+| `description`     | 모델 이름(예: decoy_1, model_1 등).                                                      |
+| `total_score`     | 복합체의 총 에너지 점수. 낮을수록 안정적인 구조.                                          |
+| `interface_score` | 인터페이스 에너지 점수 (결합 에너지를 평가). 낮을수록 안정적이고 강한 결합.                 |
+| `rmsd`            | 도킹 전후의 구조 변화(RMSD) 크기. 작을수록 원래 위치를 잘 유지한 모델.                    |
+| `CAPRI_rank`      | CAPRI 메트릭을 기반으로 평가된 품질(0~3). **3**은 가장 높은 품질의 모델.                   |
+| `ddG`             | 결합 자유 에너지 변화. 낮을수록 더 안정적인 결합을 의미.                                   |
+| `packing_density` | 인터페이스 영역에서 사이드체인의 밀도. 높을수록 인터페이스가 더 밀접하게 접촉함을 의미.    |
+
+
+### **CAPRI 등급 평가 기준**
+
+CAPRI 등급은 Fraction of Native Contacts (Fnat), Ligand RMSD, Interface RMSD 등의 메트릭을 기반으로 결정됩니다.
+CAPRI 등급은 도킹된 모델의 품질을 평가하기 위한 기준입니다. 아래는 등급별 품질과 설명입니다:
+
+| 등급 | 품질           | 설명                                       |
+|------|----------------|--------------------------------------------|
+| 3    | High Quality   | 높은 정확도로 결합 인터페이스를 예측한 모델. |
+| 2    | Medium         | 중간 정도의 정확도로 결합 인터페이스를 예측한 모델. |
+| 1    | Acceptable     | 결합 인터페이스를 대략적으로 맞춘 모델.        |
+| 0    | Incorrect      | 결합 인터페이스가 잘못되었거나 무작위에 가까운 모델. |
+
+
+### **최적 모델 선택 기준**
+1. `total_score`와 `interface_score` 값이 낮은 모델을 우선 선택.
+   - `total_score`: 복합체의 총 에너지 점수. 값이 낮을수록 더 안정적인 구조를 의미.
+   - `interface_score`: 결합 에너지 점수. 값이 낮을수록 더 강한 결합을 의미.
+
+2. `CAPRI_rank`가 **3** (High Quality) 또는 **2** (Medium Quality)인 모델에 우선순위 부여.
+
+3. RMSD (Root Mean Square Deviation):
+   - RMSD 값이 작을수록 도킹 전후의 구조 변화가 적음을 의미.
+   - 보통 2.0 Å 이하의 RMSD를 가진 모델을 더 신뢰할 수 있음.
+
+---
+
+## **4. Docking 옵션**
 
 ### **General Docking**
 - **`-docking:partners`**: 도킹할 체인을 지정합니다. 
@@ -60,8 +133,6 @@ Rosetta 도킹은 단백질-단백질 및 단백질-리간드 상호작용을 �
   ```bash
   -docking:low_res_protocol_only true
   ```
-
----
 
 ### **Ligand Docking**
 리간드 도킹 관련 옵션입니다.
@@ -97,8 +168,6 @@ Rosetta 도킹은 단백질-단백질 및 단백질-리간드 상호작용을 �
   -docking:ligand:grid_map grid_output.map
   ```
 
----
-
 ### **Symmetric Docking**
 대칭성을 고려한 도킹 시 사용되는 옵션입니다.
 
@@ -112,34 +181,6 @@ Rosetta 도킹은 단백질-단백질 및 단백질-리간드 상호작용을 �
   -docking:symmetry:minimize_backbone true
   ```
 
----
-
-## **4. Running Docking Protocol**
-
-### **Basic Command**
-아래는 Rosetta 도킹 프로토콜의 기본 실행 명령입니다:
-
-```bash
-./bin/docking_protocol.default.linuxgccrelease \
-  -s input.pdb \
-  -docking:partners A_B \
-  -nstruct 10 \
-  -out:path:all /path/to/output/
-```
-
-### **Ligand Docking Example**
-리간드 도킹을 실행하는 예제:
-
-```bash
-./bin/docking_protocol.default.linuxgccrelease \
-  -s receptor_ligand.pdb \
-  -docking:ligand true \
-  -docking:ligand:protocol full \
-  -docking:ligand:soft_rep true \
-  -nstruct 20 \
-  -out:path:all /path/to/output/
-```
-
 ### **Symmetric Docking Example**
 대칭성을 고려한 도킹 예제:
 
@@ -152,74 +193,12 @@ Rosetta 도킹은 단백질-단백질 및 단백질-리간드 상호작용을 �
   -out:path:all /path/to/output/
 ```
 
----
+## **Links**
 
-## **5. Tips for Using Docking Options**
-1. **최적화된 파라미터 사용:** 기본값으로 실행해 보고, 필요 시 특정 파라미터를 조정하세요.
-2. **출력 디렉토리 설정:** 출력 경로를 명시적으로 지정하여 결과를 관리하기 쉽게 만드세요.
-3. **로그 파일 확인:** 실행 오류 시 Rosetta 로그(`ROSETTA_CRASH.log`)를 확인하여 원인을 파악하세요.
-
----
-
-## **6. References**
-- [Rosetta Documentation](https://www.rosettacommons.org/docs/latest/home)
-- `doc/full-options-list.md`: Rosetta 소스 디렉토리에 포함된 옵션 목록 파일
+- <https://www.rosettacommons.org/docs/latest/home>
+- RosettaDock 공식 문서:
+     <https://rosettacommons.org/docs/latest/docking/docking-protocol>
+- CAPRI 평가 기준 설명:
+     <https://www.ebi.ac.uk/msd-srv/capri/>
 
 
----
-
-## 결과에 영향을 미칠만한 Ligand Docking 옵션
-
-### `-docking:ligand:protocol`
-- **영향**:
-  - `abbreviated`는 간소화된 도킹 프로토콜로 빠르게 결과를 제공하지만, 정밀도가 낮을 수 있습니다.
-  - `full`은 고해상도 도킹을 수행하며, 더 정확한 결과를 제공합니다.
-- **추천 상황**:
-  - 초기 스크리닝에서는 `abbreviated`, 최종 구조 최적화에서는 `full`을 사용하세요.
-
----
-
-### `-docking:ligand:soft_rep`
-- **영향**:
-  - 부드러운 반발력을 활성화하면 리간드와 단백질 간의 겹침을 더 관대하게 처리합니다.
-  - 초기 구조의 품질이 낮거나 샘플링 범위를 넓히고 싶을 때 유용합니다.
-- **추천 상황**:
-  - 구조 예측의 초기 단계나 결합 포켓의 정확한 정의가 불확실한 경우에 사용하세요.
-
----
-
-### `-docking:ligand:grid`
-- **영향**:
-  - 그리드 기반 계산은 도킹 속도를 크게 향상시킬 수 있습니다.
-  - 복잡한 리간드와 단백질 상호작용을 다룰 때 효율적입니다.
-- **추천 상황**:
-  - 대규모 도킹 시뮬레이션이나 계산 자원이 제한적인 경우에 활성화하세요.
-
----
-
-## 결과에 영향을 미칠만한 Symmetric Docking 옵션
-
-### `-docking:symmetry`
-- **영향**:
-  - 대칭성을 고려하지 않으면 구조가 물리적, 화학적 현실성을 잃을 수 있습니다.
-  - 대칭성을 활성화하면 계산 효율성과 정확도가 모두 향상됩니다.
-- **추천 상황**:
-  - 대칭성을 가지는 복합체(예: 이량체, 사량체)를 다룰 때 반드시 사용하세요.
-
----
-
-### `-docking:symmetry:minimize_backbone`
-- **영향**:
-  - 백본 구조의 유연성을 추가하면 상호작용 면적을 최적화할 가능성이 높아집니다.
-  - 그러나 계산 시간이 증가할 수 있습니다.
-- **추천 상황**:
-  - 복합체의 유연성을 포함하여 도킹 결과를 최적화해야 할 때 사용하세요.
-
----
-
-### `-docking:symmetry:use_symmetry_definition`
-- **영향**:
-  - 정확한 대칭 정의를 사용하면 계산이 더 정밀해집니다.
-  - 잘못된 대칭 정의 파일을 사용하면 오류가 발생하거나 비현실적인 결과를 초래할 수 있습니다.
-- **추천 상황**:
-  - 대칭 복합체가 명확하게 정의된 경우, 반드시 대칭 정의 파일을 활용하세요.
