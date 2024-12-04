@@ -1,0 +1,223 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://siji3328.github.io//</id>
+  <title>ttoyoon</title>
+  <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
+  <updated>2024-12-04T09:31:47+08:00</updated>
+  <author>
+    <name>your_full_name</name>
+    <uri>https://siji3328.github.io//</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="https://siji3328.github.io//feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="en"
+    href="https://siji3328.github.io//"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator>
+  <rights> © 2024 your_full_name </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>Oligo designer</title>
+    <link href="https://siji3328.github.io//posts/oligodesigner/" rel="alternate" type="text/html" title="Oligo designer" />
+    <published>2024-11-08T00:00:00+08:00</published>
+  
+    <updated>2024-11-08T00:00:00+08:00</updated>
+  
+    <id>https://siji3328.github.io//posts/oligodesigner/</id>
+    <content type="text/html" src="https://siji3328.github.io//posts/oligodesigner/" />
+    <author>
+      <name>your_full_name</name>
+    </author>
+
+  
+    
+    <category term="Bioinformatics" />
+    
+    <category term="Tool" />
+    
+  
+
+  <summary>Oligo designer (PCA를 위한) 코드 사용법
+
+중첩되는 서열의 Tm 값을 만족하는 조각을 만들어 PCA(Polymerase Chain Assembly) 프라이머를 설계하는 Python 코드 사용법을 설명합니다.
+
+1. Tm(녹는 온도) 계산 (Wallace 공식)
+
+calculate_tm 함수는 DNA 조각의 Tm을 Wallace 공식을 사용해 계산합니다.
+
+[
+Tm = 2 \times (A + T) + 4 \times (G + C)
+]
+
+각 염기서열의 A, T, G, C 개수를 센 후 공식을 적용하여 Tm을 계산합니다.
+
+2. 프라이머 설계 함수: design_pca_primers
+
+design_pca_primers 함수는 PCA를 위한 DNA 조각들을 생성하고, 각 조각의 Tm 값을 확...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>24년 10월 한국공업화학회</title>
+    <link href="https://siji3328.github.io//posts/marsmars/" rel="alternate" type="text/html" title="24년 10월 한국공업화학회" />
+    <published>2024-11-08T00:00:00+08:00</published>
+  
+    <updated>2024-11-08T00:00:00+08:00</updated>
+  
+    <id>https://siji3328.github.io//posts/marsmars/</id>
+    <content type="text/html" src="https://siji3328.github.io//posts/marsmars/" />
+    <author>
+      <name>your_full_name</name>
+    </author>
+
+  
+    
+    <category term="Blog" />
+    
+    <category term="Conference Photo" />
+    
+  
+
+  <summary>아름다운 사진과 함께
+
+
+
+광주 학회를 다녀왔습니다. (수-금)
+금요일 오전 엄청난 사건을 알게 되었는데요, 비밀입니다.</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>인생네컷 on Mars</title>
+    <link href="https://siji3328.github.io//posts/labphoto/" rel="alternate" type="text/html" title="인생네컷 on Mars" />
+    <published>2024-11-08T00:00:00+08:00</published>
+  
+    <updated>2024-11-08T00:00:00+08:00</updated>
+  
+    <id>https://siji3328.github.io//posts/labphoto/</id>
+    <content type="text/html" src="https://siji3328.github.io//posts/labphoto/" />
+    <author>
+      <name>your_full_name</name>
+    </author>
+
+  
+    
+    <category term="Blog" />
+    
+    <category term="Lab Photo" />
+    
+  
+
+  <summary>아름다운 사진과 함께
+
+
+
+꽤나 젊은 MARS 대원들</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Autodock-GPU</title>
+    <link href="https://siji3328.github.io//posts/autodock-gpu/" rel="alternate" type="text/html" title="Autodock-GPU" />
+    <published>2024-11-07T00:00:00+08:00</published>
+  
+    <updated>2024-11-07T00:00:00+08:00</updated>
+  
+    <id>https://siji3328.github.io//posts/autodock-gpu/</id>
+    <content type="text/html" src="https://siji3328.github.io//posts/autodock-gpu/" />
+    <author>
+      <name>your_full_name</name>
+    </author>
+
+  
+    
+    <category term="Bioinformatics" />
+    
+    <category term="Docking" />
+    
+  
+
+  <summary>AutoDock-GPU 사용법 및 옵션 정리
+
+1. AutoDock-GPU 실행 방법
+
+AutoDock-GPU를 사용하여 도킹 작업을 수행하려면 다음 단계를 따릅니다:
+
+필요한 파일
+
+  Receptor Grid Map 파일 (.fld): --ffile로 지정.
+  Ligand 파일 (.pdbqt): --lfile로 지정.
+  기타 옵션에 따라 필요에 따라 추가 파일을 준비합니다.
+
+
+실행 명령어 형식
+
+./bin/autodock_gpu_64wi \
+--ffile [Receptor Grid Map 경로] \
+--lfile [Ligand 파일 경로] \
+--nrun [실행 횟수] \
+--resnam [결과 파일 경로] \
+&amp;amp;gt; [로그 파일 경로]
+
+
+예시
+
+./bin/autodock_gpu_64wi ...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Rosetta Docking</title>
+    <link href="https://siji3328.github.io//posts/rosettadocking/" rel="alternate" type="text/html" title="Rosetta Docking" />
+    <published>2024-11-07T00:00:00+08:00</published>
+  
+    <updated>2024-11-07T00:00:00+08:00</updated>
+  
+    <id>https://siji3328.github.io//posts/rosettadocking/</id>
+    <content type="text/html" src="https://siji3328.github.io//posts/rosettadocking/" />
+    <author>
+      <name>your_full_name</name>
+    </author>
+
+  
+    
+    <category term="Bioinformatics" />
+    
+    <category term="Docking" />
+    
+  
+
+  <summary>Rosetta Docking Options Guide
+
+1. Introduction
+Rosetta 도킹은 단백질-단백질 및 단백질-리간드 상호작용을 예측하기 위한 강력한 도구입니다. 이 가이드에서는 도킹 프로토콜 실행 시 사용할 수 있는 주요 옵션과 그 사용법을 정리합니다.
+
+
+
+1. Docking 실행 명령어
+
+Basic Command
+아래는 Rosetta 도킹 프로토콜의 기본 실행 명령입니다:
+
+./bin/docking_protocol.default.linuxgccrelease \
+  -s input.pdb \
+  -docking:partners A_B \
+  -nstruct 10 \
+  -out:path:all /path/to/output/
+
+
+Ligand Docking Example
+리간드 도킹...</summary>
+
+  </entry>
+
+</feed>
+
+

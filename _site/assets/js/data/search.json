@@ -1,0 +1,140 @@
+[
+  
+  {
+    "title": "Oligo designer",
+    "url": "/posts/oligodesigner/",
+    "categories": "Bioinformatics, Tool",
+    "tags": "Oliognucleotide, Oiligo designer",
+    "date": "2024-11-08 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Oligo designer (PCA를 위한) 코드 사용법중첩되는 서열의 Tm 값을 만족하는 조각을 만들어 PCA(Polymerase Chain Assembly) 프라이머를 설계하는 Python 코드 사용법을 설명합니다.1. Tm(녹는 온도) 계산 (Wallace 공식)calculate_tm 함수는 DNA 조각의 Tm을 Wallace 공식을 사용해 계산...",
+    "content": "Oligo designer (PCA를 위한) 코드 사용법중첩되는 서열의 Tm 값을 만족하는 조각을 만들어 PCA(Polymerase Chain Assembly) 프라이머를 설계하는 Python 코드 사용법을 설명합니다.1. Tm(녹는 온도) 계산 (Wallace 공식)calculate_tm 함수는 DNA 조각의 Tm을 Wallace 공식을 사용해 계산합니다.[Tm = 2 \\times (A + T) + 4 \\times (G + C)]각 염기서열의 A, T, G, C 개수를 센 후 공식을 적용하여 Tm을 계산합니다.2. 프라이머 설계 함수: design_pca_primersdesign_pca_primers 함수는 PCA를 위한 DNA 조각들을 생성하고, 각 조각의 Tm 값을 확인하여 설정된 Tm 범위에 맞는지 검사합니다.매개변수  sequence: 전체 DNA 서열  min_fragment_length, max_fragment_length: 조각의 최소 및 최대 길이  min_tm, max_tm: 중첩 서열의 Tm 범위작동 방식  while 루프를 통해 서열을 조각 단위로 나눕니다.  각 조각의 Tm 값이 min_tm과 max_tm 범위 내에 있으면 조각을 선택합니다.  선택된 각 조각에 대해 Forward와 Reverse 프라이머를 설계하고, 결과는 primers 리스트에 저장됩니다.3. 사용 예시  전체 DNA 서열(sequence)을 입력하고, 프라이머를 설계하기 위해 design_pca_primers 함수를 호출합니다.  각 조각에 대해 Fragment 번호, 서열, 길이, Tm, Forward 및 Reverse 프라이머를 출력합니다.Codedef calculate_tm(sequence):    # Wallace 공식: Tm = 2(A+T) + 4(G+C)    a_count = sequence.count('A')    t_count = sequence.count('T')    g_count = sequence.count('G')    c_count = sequence.count('C')    tm = 2 * (a_count + t_count) + 4 * (g_count + c_count)    return tmdef design_pca_primers(sequence, min_fragment_length=75, max_fragment_length=95, min_tm=50, max_tm=55):    primers = []    fragments = []    i = 0    while i &lt; len(sequence):        selected_fragment = None        overlap_tm = 0        for fragment_length in range(max_fragment_length, min_fragment_length - 1, -1):            if i + fragment_length &gt; len(sequence):                fragment_length = len(sequence) - i            fragment = sequence[i:i + fragment_length]            if i + fragment_length &lt; len(sequence):                overlap_sequence = sequence[i + fragment_length - (fragment_length - min_fragment_length):i + fragment_length]                overlap_tm = calculate_tm(overlap_sequence)                if min_tm &lt;= overlap_tm &lt;= max_tm:                    selected_fragment = fragment                    i += fragment_length - (fragment_length - min_fragment_length)                    break            else:                selected_fragment = fragment                i += fragment_length        if selected_fragment:            fragments.append((selected_fragment, overlap_tm))    # 짝수 개의 조각을 유지하기 위해 조정    if len(fragments) % 2 != 0:        fragments.pop()    # 프라이머 설계 (Forward 및 Reverse)    for i, (fragment, overlap_tm) in enumerate(fragments):        forward_primer = fragment        if i &lt; len(fragments) - 1:            reverse_primer = fragments[i + 1][0][:min_fragment_length]  # 다음 조각의 오버랩 서열을 사용        else:            reverse_primer = \"\"  # 마지막 조각의 Reverse Primer는 필요하지 않음        primers.append({            \"fragment_number\": i + 1,            \"fragment_sequence\": fragment,            \"fragment_length\": len(fragment),            \"overlap_tm\": overlap_tm,            \"forward_primer\": forward_primer,            \"reverse_primer\": reverse_primer        })    return primers# 제공된 전체 DNA 서열sequence = \"ATGAGCAAAGGTGAAGAACTGTTTACCGGCGTTGTGCCGATTCTGGTGGAACTGGATGGCGATGTGAACGGTCACAAATTCAGCGTGCGTGGTGAAGGTGAAGGCGATGCCACGATTGGCAAACTGACGCTGAAATTTATCTGCACCACCGGCAAACTGCCGGTGCCGTGGCCGACGCTGGTGACCACCCTGACCTATGGCGTTCAGTGTTTTAGTCGCTATCCGGATCACATGAAACGTCACGATTTCTTTAAATCTGCAATGCCGGAAGGCTATGTGCAGGAACGTACGATTAGCTTTAAAGATGATGGCAAATATAAAACGCGCGCCGTTGTGAAATTTGAAGGCGATACCCTGGTGAACCGCATTGAACTGAAAGGCACGGATTTTAAAGAAGATGGCAATATCCTGGGCCATAAACTGGAATACAACTTTAATAGCCATAATGTTTATATTACGGCGGATAAACAGAAAAATGGCATCAAAGCGAATTTTACCGTTCGCCATAACGTTGAAGATGGCAGTGTGCAGCTGGCAGATCATTATCAGCAGAATACCCCGATTGGTGATGGTCCGGTGCTGCTGCCGGATAATCATTATCTGAGCACGCAGACCGTTCTGTCTAAAGATCCGAACGAAAAACGGGACCACATGGTTCTGCACGAATATGTGAATGCGGCAGGTATTACGTGGAGCCATCCGCAGTTCGAAAAATAA\"# 프라이머 설계primers = design_pca_primers(sequence, min_fragment_length=75, max_fragment_length=95, min_tm=50, max_tm=54)# 결과 출력for primer in primers:    print(f\"Fragment {primer['fragment_number']}:\")    print(f\"  Sequence: {primer['fragment_sequence']}\")    print(f\"  Fragment Length: {primer['fragment_length']} bp\")    print(f\"  Overlap Tm: {primer['overlap_tm']} °C\")    print(f\"  Forward Primer: {primer['forward_primer']}\")    print(f\"  Reverse Primer: {primer['reverse_primer']}\")    print(\"\\n\")"
+  },
+  
+  {
+    "title": "24년 10월 한국공업화학회",
+    "url": "/posts/marsmars/",
+    "categories": "Blog, Conference Photo",
+    "tags": "Photo",
+    "date": "2024-11-08 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "아름다운 사진과 함께광주 학회를 다녀왔습니다. (수-금)금요일 오전 엄청난 사건을 알게 되었는데요, 비밀입니다.",
+    "content": "아름다운 사진과 함께광주 학회를 다녀왔습니다. (수-금)금요일 오전 엄청난 사건을 알게 되었는데요, 비밀입니다."
+  },
+  
+  {
+    "title": "인생네컷 on Mars",
+    "url": "/posts/labphoto/",
+    "categories": "Blog, Lab Photo",
+    "tags": "Photo",
+    "date": "2024-11-08 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "아름다운 사진과 함께꽤나 젊은 MARS 대원들",
+    "content": "아름다운 사진과 함께꽤나 젊은 MARS 대원들"
+  },
+  
+  {
+    "title": "Autodock-GPU",
+    "url": "/posts/autodock-gpu/",
+    "categories": "Bioinformatics, Docking",
+    "tags": "Bioinformatics, docking",
+    "date": "2024-11-07 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "AutoDock-GPU 사용법 및 옵션 정리1. AutoDock-GPU 실행 방법AutoDock-GPU를 사용하여 도킹 작업을 수행하려면 다음 단계를 따릅니다:필요한 파일  Receptor Grid Map 파일 (.fld): --ffile로 지정.  Ligand 파일 (.pdbqt): --lfile로 지정.  기타 옵션에 따라 필요에 따라 추가 파일을...",
+    "content": "AutoDock-GPU 사용법 및 옵션 정리1. AutoDock-GPU 실행 방법AutoDock-GPU를 사용하여 도킹 작업을 수행하려면 다음 단계를 따릅니다:필요한 파일  Receptor Grid Map 파일 (.fld): --ffile로 지정.  Ligand 파일 (.pdbqt): --lfile로 지정.  기타 옵션에 따라 필요에 따라 추가 파일을 준비합니다.실행 명령어 형식./bin/autodock_gpu_64wi \\--ffile [Receptor Grid Map 경로] \\--lfile [Ligand 파일 경로] \\--nrun [실행 횟수] \\--resnam [결과 파일 경로] \\&gt; [로그 파일 경로]예시./bin/autodock_gpu_64wi \\--ffile /mnt/c/Users/MARS/AutoDock-GPU/input/soyoon/1ac8/1ac8_protein.maps.fld \\--lfile /mnt/c/Users/MARS/AutoDock-GPU/input/soyoon/1ac8/1ac8_ligand.pdbqt \\--nrun 10 \\--resnam /mnt/c/Users/MARS/AutoDock-GPU/output/soyoon/1ac8_result.dlg \\&gt; /mnt/c/Users/MARS/AutoDock-GPU/output/soyoon/1ac8_log.txt2. 주요 옵션 설명입력 파일 관련| 옵션               | 설명                                            | 기본값        ||--------------------|------------------------------------------------|--------------|| `--lfile` / `-L`  | Ligand 파일 경로 (`.pdbqt` 파일)                 | 필수         || `--ffile` / `-M`  | Receptor Grid Map 파일 경로 (`.fld` 파일)        | 필수         || `--flexres` / `-F`| Flexible residue 파일 경로 (`.pdbqt`)            | 없음         || `--filelist` / `-B`| Batch 모드로 처리할 파일 리스트 지정             | 없음         |출력 관련| 옵션                | 설명                                            | 기본값        ||---------------------|------------------------------------------------|--------------|| `--resnam` / `-N`   | 출력 로그 파일 이름                             | Ligand 이름  || `--contact_analysis`| 도킹 후 거리를 기반으로 한 접촉 분석 수행         | `0` (비활성) || `--dlgoutput`       | `.dlg` 형식 결과 파일 생성 여부                  | `1` (활성)   || `--xmloutput`       | `.xml` 형식 결과 파일 생성 여부                  | `1` (활성)   || `--output-cluster-poses` | 클러스터링 결과에서 출력할 자세 수            | `0` (모두)   |탐색 알고리즘 설정| 옵션                | 설명                                            | 기본값        ||---------------------|------------------------------------------------|--------------|| `--nrun` / `-n`     | LGA (Local Search Genetic Algorithm) 실행 횟수  | `20`         || `--nev` / `-e`      | LGA 실행당 최대 평가 횟수                       | `2500000`    || `--ngen` / `-g`     | 세대 수 (Generations)                           | `42000`      || `--psize` / `-p`    | LGA 인구 크기                                   | `150`        || `--lsrat`           | Local Search 비율 (%)                           | `100`        || `--crat`            | Crossover 비율 (%)                              | `80`         || `--mrat`            | Mutation 비율 (%)                               | `2`          || `--dmov`            | 최대 LGA 이동 변위 (`Å`)                        | `6.0`        || `--dang`            | 최대 LGA 회전 변위 (`°`)                        | `90.0`       |스코어링 및 에너지 설정| 옵션                | 설명                                            | 기본값        ||---------------------|------------------------------------------------|--------------|| `--smooth`          | van der Waals 상호작용의 스무딩 파라미터 (`Å`)   | `0.5`        || `--elecmindist`     | 최소 전기적 상호작용 거리 (`Å`)                 | `0.01`       |기타 설정| 옵션                | 설명                                            | 기본값        ||---------------------|------------------------------------------------|--------------|| `--devnum` / `-D`   | CUDA/OpenCL 디바이스 번호                        | `1`          || `--seed` / `-s`     | 랜덤 시드 (세 개의 정수 지정 가능)               | `시간, PID`  || `--autostop`        | 수렴 기준에 따라 자동 정지 여부                   | `1` (활성)   || `--asfreq`          | AutoStop 테스트 빈도 (세대 수)                   | `5`          |3. 결과 파일 설명결과 파일 (.dlg)  경로: --resnam 옵션에서 지정한 위치.  주요 정보:          Estimated Free Energy of Binding: 도킹된 리간드의 예상 결합 자유 에너지.      RMSD (Root Mean Square Deviation): 도킹 자세의 변동성을 보여주는 값.      Clusters: 각 클러스터의 평균 에너지 및 발생 빈도.      로그 파일 (.txt)  경로: 명령 끝에 &gt;로 지정한 파일.  내용:          명령 실행 과정.      CUDA 디바이스 및 메모리 사용량.      오류 및 디버그 메시지.      4. 결과 파일 해석 예시결과 파일 주요 섹션Free Energy of Binding  파일의 Estimated Free Energy of Binding 항목에서 리간드의 결합 에너지를 확인합니다.  값이 더 낮을수록 결합이 안정적입니다.    DOCKED: USER    Estimated Free Energy of Binding    =  -8.25 kcal/mol      RMSD Table  RMSD 값을 통해 도킹 자세의 변동성을 평가합니다.  RMSD가 2.0 Å 이하인 클러스터를 주로 사용합니다.클러스터 분석  Clustering Histogram 섹션을 확인하여 가장 빈도가 높은 클러스터를 찾습니다.    Clus | Lowest    | Run | Mean      | Num | HistogramRank | Binding   |     | Binding   | Clus|    5    10   15   20_____|___________|_____|___________|_____|____:____|____:____   1 |     -8.31 |  10 |     -8.05 |  10 |##########      5. 옵션 활용 예시--nrun 조정  실행 횟수를 늘리면 더 많은 자세를 탐색하여 결합 안정성을 확인할 수 있습니다.    ./bin/autodock_gpu_64wi \\--ffile [Receptor Grid Map 경로] \\--lfile [Ligand 파일 경로] \\--nrun 50 \\--resnam [결과 파일 경로]      --smooth 사용  van der Waals 스무딩 파라미터를 변경하여 더 부드러운 상호작용을 모델링할 수 있습니다.    ./bin/autodock_gpu_64wi \\--ffile [Receptor Grid Map 경로] \\--lfile [Ligand 파일 경로] \\--smooth 1.0 \\--resnam [결과 파일 경로]      Flexible Residues 추가  리간드와 결합부위를 유연하게 처리할 때 사용합니다.    ./bin/autodock_gpu_64wi \\--ffile [Receptor Grid Map 경로] \\--lfile [Ligand 파일 경로] \\--flexres [Flexible Residue 파일 경로] \\--resnam [결과 파일 경로]      6. 주의사항  경로 확인: 입력 파일과 출력 경로가 올바른지 반드시 확인하세요.  출력 디렉토리: 결과가 저장될 폴더가 존재하지 않으면 명령어가 실패합니다.  GPU 사용량: GPU 메모리 부족으로 인해 도킹이 중단되지 않도록 주의하세요."
+  },
+  
+  {
+    "title": "Rosetta Docking",
+    "url": "/posts/rosettadocking/",
+    "categories": "Bioinformatics, Docking",
+    "tags": "Bioinformatics, docking",
+    "date": "2024-11-07 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Rosetta Docking Options Guide1. IntroductionRosetta 도킹은 단백질-단백질 및 단백질-리간드 상호작용을 예측하기 위한 강력한 도구입니다. 이 가이드에서는 도킹 프로토콜 실행 시 사용할 수 있는 주요 옵션과 그 사용법을 정리합니다.1. Docking 실행 명령어Basic Command아래는 Rosetta 도킹 프로...",
+    "content": "Rosetta Docking Options Guide1. IntroductionRosetta 도킹은 단백질-단백질 및 단백질-리간드 상호작용을 예측하기 위한 강력한 도구입니다. 이 가이드에서는 도킹 프로토콜 실행 시 사용할 수 있는 주요 옵션과 그 사용법을 정리합니다.1. Docking 실행 명령어Basic Command아래는 Rosetta 도킹 프로토콜의 기본 실행 명령입니다:./bin/docking_protocol.default.linuxgccrelease \\  -s input.pdb \\  -docking:partners A_B \\  -nstruct 10 \\  -out:path:all /path/to/output/Ligand Docking Example리간드 도킹을 실행하는 예제:./bin/docking_protocol.default.linuxgccrelease \\  -s receptor_ligand.pdb \\  -docking:ligand true \\  -docking:ligand:protocol full \\  -docking:ligand:soft_rep true \\  -nstruct 20 \\  -out:path:all /path/to/output/Symmetric Docking Example대칭성을 고려한 도킹 예제:./bin/docking_protocol.default.linuxgccrelease \\  -s symmetric_complex.pdb \\  -docking:symmetry true \\  -docking:symmetry:minimize_backbone true \\  -nstruct 10 \\  -out:path:all /path/to/output/3. General OptionsInput/Output  -s: 입력 구조 파일(PDB)을 지정합니다.    -s input.pdb        -out:path:all: 출력 파일 경로를 지정합니다.    -out:path:all /path/to/output/        -nstruct: 생성할 구조의 수를 지정합니다.    -nstruct 10      Score Functions  -score:weights: 사용할 점수 함수(weight set)를 지정합니다.    -score:weights ref15      3. Docking OptionsGeneral Docking  -docking:partners: 도킹할 체인을 지정합니다.    -docking:partners A_B              A는 리간드 체인, B는 수용체 체인입니다.        -docking:randomize1, -docking:randomize2: 각각의 체인을 초기 위치에서 무작위화합니다.    -docking:randomize1 true-docking:randomize2 true        -docking:low_res_protocol_only: 저해상도 도킹 프로토콜만 실행합니다.    -docking:low_res_protocol_only true      Ligand Docking리간드 도킹 관련 옵션입니다.  -docking:ligand: 리간드 도킹 작업을 활성화합니다.    -docking:ligand true        -docking:ligand:protocol: 리간드 도킹 프로토콜을 지정합니다.    -docking:ligand:protocol full        -docking:ligand:soft_rep: 부드러운 반발력을 활성화합니다.    -docking:ligand:soft_rep true      Grid-Based Ligand Docking  -docking:ligand:grid: 그리드 기반 계산을 활성화합니다.    -docking:ligand:grid true        -docking:ligand:grid_kin: 생성된 그리드를 .kin 파일 형식으로 저장합니다.    -docking:ligand:grid_kin grid_output.kin        -docking:ligand:grid_map: 그리드를 BRIX 맵 형식으로 저장합니다.    -docking:ligand:grid_map grid_output.map      Symmetric Docking대칭성을 고려한 도킹 시 사용되는 옵션입니다.  -docking:symmetry: 대칭성을 활성화합니다.    -docking:symmetry true        -docking:symmetry:minimize_backbone: 단백질 백본의 최소화를 허용합니다.    -docking:symmetry:minimize_backbone true      4. Tips for Using Docking Options  최적화된 파라미터 사용: 기본값으로 실행해 보고, 필요 시 특정 파라미터를 조정하세요.  출력 디렉토리 설정: 출력 경로를 명시적으로 지정하여 결과를 관리하기 쉽게 만드세요.  로그 파일 확인: 실행 오류 시 Rosetta 로그(ROSETTA_CRASH.log)를 확인하여 원인을 파악하세요.5. References  Rosetta Documentation  doc/full-options-list.md: Rosetta 소스 디렉토리에 포함된 옵션 목록 파일결과에 영향을 미칠만한 Ligand Docking 옵션-docking:ligand:protocol  영향:          abbreviated는 간소화된 도킹 프로토콜로 빠르게 결과를 제공하지만, 정밀도가 낮을 수 있습니다.      full은 고해상도 도킹을 수행하며, 더 정확한 결과를 제공합니다.        추천 상황:          초기 스크리닝에서는 abbreviated, 최종 구조 최적화에서는 full을 사용하세요.      -docking:ligand:soft_rep  영향:          부드러운 반발력을 활성화하면 리간드와 단백질 간의 겹침을 더 관대하게 처리합니다.      초기 구조의 품질이 낮거나 샘플링 범위를 넓히고 싶을 때 유용합니다.        추천 상황:          구조 예측의 초기 단계나 결합 포켓의 정확한 정의가 불확실한 경우에 사용하세요.      -docking:ligand:grid  영향:          그리드 기반 계산은 도킹 속도를 크게 향상시킬 수 있습니다.      복잡한 리간드와 단백질 상호작용을 다룰 때 효율적입니다.        추천 상황:          대규모 도킹 시뮬레이션이나 계산 자원이 제한적인 경우에 활성화하세요.      결과에 영향을 미칠만한 Symmetric Docking 옵션-docking:symmetry  영향:          대칭성을 고려하지 않으면 구조가 물리적, 화학적 현실성을 잃을 수 있습니다.      대칭성을 활성화하면 계산 효율성과 정확도가 모두 향상됩니다.        추천 상황:          대칭성을 가지는 복합체(예: 이량체, 사량체)를 다룰 때 반드시 사용하세요.      -docking:symmetry:minimize_backbone  영향:          백본 구조의 유연성을 추가하면 상호작용 면적을 최적화할 가능성이 높아집니다.      그러나 계산 시간이 증가할 수 있습니다.        추천 상황:          복합체의 유연성을 포함하여 도킹 결과를 최적화해야 할 때 사용하세요.      -docking:symmetry:use_symmetry_definition  영향:          정확한 대칭 정의를 사용하면 계산이 더 정밀해집니다.      잘못된 대칭 정의 파일을 사용하면 오류가 발생하거나 비현실적인 결과를 초래할 수 있습니다.        추천 상황:          대칭 복합체가 명확하게 정의된 경우, 반드시 대칭 정의 파일을 활용하세요.      "
+  },
+  
+  {
+    "title": "Competent cell, CaCl2 method",
+    "url": "/posts/cacal2/",
+    "categories": "Lab protocol",
+    "tags": "Competent cell, Protocol",
+    "date": "2024-11-07 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Competent Cells Preparation and Transformation ProtocolReference  2017, Chemotransformation of bacterial cells without heat-shock  2017, Making Calcium Competent Cells protocol - iGEMMaterials  5ml...",
+    "content": "Competent Cells Preparation and Transformation ProtocolReference  2017, Chemotransformation of bacterial cells without heat-shock  2017, Making Calcium Competent Cells protocol - iGEMMaterials  5ml LB broth (Seed culture)  100ml LB broth (Main culture)  25ml 0.1M CaCl2 (Wash buffer)  5ml 0.1M CaCl2 with 15% glycerol (Suspension buffer)*All supplies were subjected to high temperature sterilization before use.Procedure  Streaking: Streak E. coli cells onto fresh LB solid media, followed by incubation at 37 °C for 14 hours.  Inoculation: Inoculate E. coli colonies into fresh LB liquid media, followed by shaking incubation at 37 °C for 16 hours.  Transfer Culture: Transfer 1 mL of the overnight cell culture into 100 mL of fresh LB, shaking and incubating at 37 °C until the OD600 reaches 0.4.          (Seed an overnight culture at a 1:100 dilution in LB. Warning: Do not let the OD600 exceed 0.5 or poor competent cells will result.)        Chilling: Incubate the cells on ice for 1 hour.  Centrifugation: Centrifuge at 4 °C (4000 r/min, 10 min).  Re-suspension: Gently re-suspend the cell pellet using 25 mL of precooled 0.1M CaCl2.          (Resuspend the cells in 1/4 volume of ice-cold 0.1M CaCl2)        Incubation: Incubate the resulting cell suspension on ice for 20 minutes.          (Optimal transformation frequency requires at least 1 hour on ice; ideal incubation is 12-16 hours at 4 °C)        Centrifugation: Centrifuge again at 4 °C (4000 r/min, 10 min).  Final Re-suspension: Gently re-suspend the cell pellet using 1 mL of precooled 0.1M CaCl2 with 10% w/v glycerol.          (Final concentration: 15 OD600 units/ml; for example, 100ml with OD 0.4 results in xml: OD 15)        Final Incubation: Incubate the resulting cell suspension on ice for 30 minutes.  Aliquoting: Divide the mixture into small aliquots and transfer to a -80 °C freezer.Transforming the Cells  Remove an aliquot of competent cells and let them thaw completely on ice.  Add up to 10 µl of DNA to 100 µl of competent cells.  Incubate on ice for at least 1 hour with periodic vortexing (every 20 minutes) to ensure even distribution and prevent settling.  Heat Shock: Heat shock cells at 42 °C for 90 seconds.          (The transformation efficiency of the non-heat-shock method may be slightly better than that of the classic heat-shock approach if the DNA-cell incubation time approaches 0.5-1 h.)        Add 100 µl of LB and plate on the appropriate selective media."
+  },
+  
+  {
+    "title": "RFAA (RoseTTAFold-All-Atom)",
+    "url": "/posts/RFAA(RoseTTAFold-All-Atom)/",
+    "categories": "Bioinformatics, Model",
+    "tags": "RFAA, RoseTTAFold, Bioinformatics, Protein Structure",
+    "date": "2024-11-07 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "RFAA (RoseTTAFold-All-Atom)1. Docker 프로그램 실행  바탕화면에 있는 Docker 아이콘을 더블 클릭하여 Docker 프로그램을 실행합니다.2. 터미널 열기  바탕화면의 MARS 폴더로 이동한 후, RFAA 폴더를 찾습니다.  RFAA 폴더에서 마우스 오른쪽 버튼을 클릭하여 ‘터미널에서 열기’를 선택합니다.3. Docker...",
+    "content": "RFAA (RoseTTAFold-All-Atom)1. Docker 프로그램 실행  바탕화면에 있는 Docker 아이콘을 더블 클릭하여 Docker 프로그램을 실행합니다.2. 터미널 열기  바탕화면의 MARS 폴더로 이동한 후, RFAA 폴더를 찾습니다.  RFAA 폴더에서 마우스 오른쪽 버튼을 클릭하여 ‘터미널에서 열기’를 선택합니다.3. Docker 실행 및 GPU 테스트      아래 명령어를 차례로 입력하여 Docker와 GPU 인식을 확인합니다:    docker run hello-world  # Docker 실행 테스트docker run --gpus all nvidia/cuda:11.8.0-runtime-ubuntu22.04 nvidia-smi  # GPU 인식 테스트      4. RFAA Docker 이미지 빌드 및 실행      아래 명령어로 Docker 이미지를 빌드하고, GPU 지원을 활성화한 상태로 컨테이너를 실행합니다:    docker build -t rfaa .  # Docker 이미지 빌드 (약 11분 소요)docker run --gpus all -it rfaa /bin/bash  # GPU 지원과 함께 컨테이너 실행      5. 환경 활성화 및 TensorFlow GPU 인식 테스트      컨테이너 내에서 아래 명령어를 실행하여 RFAA 환경을 활성화하고, TensorFlow가 GPU를 인식하는지 확인합니다:    source activate RFAA  # 환경 활성화python -c \"import tensorflow as tf; print('Num GPUs Available:', len(tf.config.list_physical_devices('GPU')))\"        Num GPUs Available: 1라고 표시되면 다음 단계로 진행합니다.      Num GPUs Available: 0이라면 아래 명령어를 추가로 입력하여 TensorFlow를 업그레이드하고 환경 변수를 설정합니다:    mamba install tensorflow-gpu=2.11  # TensorFlow 업그레이드docker run --gpus all -e NVIDIA_VISIBLE_DEVICES=all -e NVIDIA_DRIVER_CAPABILITIES=compute,utility -it rfaa /bin/bash  # 환경변수 설정        Num GPUs Available: 1이 표시되면 성공적으로 GPU가 인식된 것입니다!6. RFAA 모델 예측 테스트      RFAA 모델 예측을 위한 파일을 다운로드하고, 예시로 단백질 예측을 수행해봅니다:    git clone https://github.com/baker-laboratory/RoseTTAFold-All-Atom.gitcd RoseTTAFold-All-Atompython -m rf2aa.run_inference --config-name protein  # 단백질 예측 테스트      7. 내 서열로 테스트하기  위 단계를 완료한 후, 내 서열로 예측을 진행할 수 있습니다."
+  },
+  
+  {
+    "title": "AF2 (AlphaFold2)",
+    "url": "/posts/AF2(AlphaFold2)/",
+    "categories": "Bioinformatics, Model",
+    "tags": "AlphaFold2, Protein Folding, Bioinformatics",
+    "date": "2024-11-07 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "AlphaFold2 (AF2) 사용법1. AlphaFold2 소개AlphaFold2는 단백질 구조 예측을 위한 강력한 AI 모델로, 단백질 서열을 기반으로 3차원 구조를 예측할 수 있습니다.2. 설치 및 환경 설정AlphaFold2를 사용하려면 몇 가지 환경 설정이 필요합니다. 다음 명령어로 환경을 설정할 수 있습니다:```bash예시 명령어git c...",
+    "content": "AlphaFold2 (AF2) 사용법1. AlphaFold2 소개AlphaFold2는 단백질 구조 예측을 위한 강력한 AI 모델로, 단백질 서열을 기반으로 3차원 구조를 예측할 수 있습니다.2. 설치 및 환경 설정AlphaFold2를 사용하려면 몇 가지 환경 설정이 필요합니다. 다음 명령어로 환경을 설정할 수 있습니다:```bash예시 명령어git clone https://github.com/deepmind/alphafold.gitcd alphafold"
+  }
+  
+]
+
