@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="Autodock-GPU" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
-<meta property="og:description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
+<meta name="description" content="«««&lt; HEAD" />
+<meta property="og:description" content="«««&lt; HEAD" />
 <link rel="canonical" href="http://localhost:4000/posts/autodock-gpu/" />
 <meta property="og:url" content="http://localhost:4000/posts/autodock-gpu/" />
 <meta property="og:site_name" content="ttoyoon" />
@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="Autodock-GPU" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-11-07T00:00:00+08:00","datePublished":"2024-11-07T00:00:00+08:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Autodock-GPU","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/autodock-gpu/"},"url":"http://localhost:4000/posts/autodock-gpu/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-12-04T17:04:29+08:00","datePublished":"2024-11-07T00:00:00+08:00","description":"«««&lt; HEAD","headline":"Autodock-GPU","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/autodock-gpu/"},"url":"http://localhost:4000/posts/autodock-gpu/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -250,6 +250,8 @@
     <p class="site-subtitle fst-italic mb-0">life on the Mars</p>
   </header>
   <!-- .profile-wrapper -->
+
+
 
   <nav class="flex-column flex-grow-1 w-100 ps-0">
     <ul class="nav">
@@ -597,6 +599,61 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -612,6 +669,72 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -869,6 +992,29 @@
 
       <!-- lastmod date -->
       
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1733303069"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Dec  4, 2024
+</time>
+
+        </span>
+      
 
       
 
@@ -911,9 +1057,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1282 words"
+  title="1822 words"
 >
-  <em>7 min</em> read</span>
+  <em>10 min</em> read</span>
 
         </div>
       </div>
@@ -946,6 +1092,7 @@
 
   <div class="content">
     <hr />
+<p>«««&lt; HEAD</p>
 
 <h2 id="autodock-gpu-특징"><span class="me-2">AutoDock-GPU 특징</span><a href="#autodock-gpu-특징" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -963,7 +1110,36 @@
 <ul>
   <li><strong>Receptor Grid Map 파일</strong> (<code class="language-plaintext highlighter-rouge">.fld</code>): AutoGrid에서 생성된 수용체의 결합 정보.</li>
   <li><strong>Ligand 파일</strong> (<code class="language-plaintext highlighter-rouge">.pdbqt</code>): Meeko를 사용해 준비한 리간드 파일.</li>
-  <li>기타 옵션에 따라 필요에 따라 추가 파일을 준비합니다.</li>
+  <li>
+    <h1 id="기타-옵션에-따라-필요에-따라-추가-파일을-준비합니다">기타 옵션에 따라 필요에 따라 추가 파일을 준비합니다.</h1>
+    <h1 id="autodock-gpu">AutoDock-GPU</h1>
+  </li>
+  <li>AutoDock-GPU는 Scripps Research의 Forli 연구소에서 개발된 소프트웨어로, AutoDock 4.2.6의 OpenCL 및 CUDA 가속 버전</li>
+</ul>
+
+<h2 id="1-autodock-gpu-quick-start-1"><span class="me-2">1. AutoDock-GPU Quick Start</span><a href="#1-autodock-gpu-quick-start-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="필요한-파일"><span class="me-2"><strong>필요한 파일</strong></span><a href="#필요한-파일" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ul>
+  <li><strong>Receptor Grid Map 파일</strong> (<code class="language-plaintext highlighter-rouge">.fld</code>): <code class="language-plaintext highlighter-rouge">--ffile</code>로 지정.</li>
+  <li><strong>Ligand 파일</strong> (<code class="language-plaintext highlighter-rouge">.pdbqt</code>): <code class="language-plaintext highlighter-rouge">--lfile</code>로 지정.</li>
+  <li>기타 옵션에 따라 필요에 따라 추가 파일을 준비.
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <blockquote>
+              <blockquote>
+                <blockquote>
+                  <p>main</p>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </li>
 </ul>
 
 <h3 id="기본-실행-명령"><span class="me-2"><strong>기본 실행 명령</strong></span><a href="#기본-실행-명령" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -1002,7 +1178,26 @@
 <span class="o">&gt;</span> /mnt/c/Users/MARS/AutoDock-GPU/output/soyoon/1ac8_log.txt
 </pre></td></tr></tbody></table></code></div></div>
 <hr />
+<p>«««&lt; HEAD</p>
 <h2 id="2-출력-파일"><span class="me-2">2. 출력 파일</span><a href="#2-출력-파일" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>=======</p>
+
+<h2 id="2-결과-파일"><span class="me-2">2. 결과 파일</span><a href="#2-결과-파일" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <blockquote>
+              <p>main</p>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
 
 <h3 id="결과-파일-dlg"><span class="me-2"><strong>결과 파일 (<code class="language-plaintext highlighter-rouge">.dlg</code>)</strong></span><a href="#결과-파일-dlg" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <ul>
@@ -1030,7 +1225,25 @@
 
 <hr />
 
+<p>«««&lt; HEAD</p>
 <h2 id="3-출력-파일-해석-예시"><span class="me-2">3. 출력 파일 해석 예시</span><a href="#3-출력-파일-해석-예시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>=======</p>
+<h2 id="3-결과-파일-해석"><span class="me-2">3. 결과 파일 해석</span><a href="#3-결과-파일-해석" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <blockquote>
+              <p>main</p>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
 
 <h3 id="출력-파일-주요-섹션"><span class="me-2"><strong>출력 파일 주요 섹션</strong></span><a href="#출력-파일-주요-섹션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1070,8 +1283,7 @@ _____|___________|_____|___________|_____|____:____|____:____
 </ul>
 
 <hr />
-
-<h2 id="4-docking-옵션"><span class="me-2">4. Docking 옵션</span><a href="#4-docking-옵션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="4-주요-옵션-설명"><span class="me-2">4. 주요 옵션 설명</span><a href="#4-주요-옵션-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="입력-파일-관련"><span class="me-2"><strong>입력 파일 관련</strong></span><a href="#입력-파일-관련" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1080,29 +1292,29 @@ _____|___________|_____|___________|_____|____:____|____:____
     <tr>
       <th>옵션</th>
       <th>설명</th>
-      <th style="text-align: right">기본값</th>
+      <th>기본값</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">--lfile</code> / <code class="language-plaintext highlighter-rouge">-L</code></td>
       <td>Ligand 파일 경로 (<code class="language-plaintext highlighter-rouge">.pdbqt</code> 파일)</td>
-      <td style="text-align: right">필수</td>
+      <td>필수</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">--ffile</code> / <code class="language-plaintext highlighter-rouge">-M</code></td>
       <td>Receptor Grid Map 파일 경로 (<code class="language-plaintext highlighter-rouge">.fld</code> 파일)</td>
-      <td style="text-align: right">필수</td>
+      <td>필수</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">--flexres</code> / <code class="language-plaintext highlighter-rouge">-F</code></td>
       <td>Flexible residue 파일 경로 (<code class="language-plaintext highlighter-rouge">.pdbqt</code>)</td>
-      <td style="text-align: right">없음</td>
+      <td>없음</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">--filelist</code> / <code class="language-plaintext highlighter-rouge">-B</code></td>
       <td>Batch 모드로 처리할 파일 리스트 지정</td>
-      <td style="text-align: right">없음</td>
+      <td>없음</td>
     </tr>
   </tbody>
 </table></div>
@@ -1265,6 +1477,200 @@ _____|___________|_____|___________|_____|____:____|____:____
 
 <hr />
 
+<h2 id="4-docking-옵션"><span class="me-2">4. Docking 옵션</span><a href="#4-docking-옵션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="입력-파일-관련-1"><span class="me-2"><strong>입력 파일 관련</strong></span><a href="#입력-파일-관련-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>옵션</th>
+      <th>설명</th>
+      <th style="text-align: right">기본값</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--lfile</code> / <code class="language-plaintext highlighter-rouge">-L</code></td>
+      <td>Ligand 파일 경로 (<code class="language-plaintext highlighter-rouge">.pdbqt</code> 파일)</td>
+      <td style="text-align: right">필수</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--ffile</code> / <code class="language-plaintext highlighter-rouge">-M</code></td>
+      <td>Receptor Grid Map 파일 경로 (<code class="language-plaintext highlighter-rouge">.fld</code> 파일)</td>
+      <td style="text-align: right">필수</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--flexres</code> / <code class="language-plaintext highlighter-rouge">-F</code></td>
+      <td>Flexible residue 파일 경로 (<code class="language-plaintext highlighter-rouge">.pdbqt</code>)</td>
+      <td style="text-align: right">없음</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--filelist</code> / <code class="language-plaintext highlighter-rouge">-B</code></td>
+      <td>Batch 모드로 처리할 파일 리스트 지정</td>
+      <td style="text-align: right">없음</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h3 id="출력-관련-1"><span class="me-2"><strong>출력 관련</strong></span><a href="#출력-관련-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>옵션</th>
+      <th>설명</th>
+      <th>기본값</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--resnam</code> / <code class="language-plaintext highlighter-rouge">-N</code></td>
+      <td>출력 로그 파일 이름</td>
+      <td>Ligand 이름</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--contact_analysis</code></td>
+      <td>도킹 후 거리를 기반으로 한 접촉 분석 수행</td>
+      <td><code class="language-plaintext highlighter-rouge">0</code> (비활성)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--dlgoutput</code></td>
+      <td><code class="language-plaintext highlighter-rouge">.dlg</code> 형식 결과 파일 생성 여부</td>
+      <td><code class="language-plaintext highlighter-rouge">1</code> (활성)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--xmloutput</code></td>
+      <td><code class="language-plaintext highlighter-rouge">.xml</code> 형식 결과 파일 생성 여부</td>
+      <td><code class="language-plaintext highlighter-rouge">1</code> (활성)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--output-cluster-poses</code></td>
+      <td>클러스터링 결과에서 출력할 자세 수</td>
+      <td><code class="language-plaintext highlighter-rouge">0</code> (모두)</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h3 id="탐색-알고리즘-설정-1"><span class="me-2"><strong>탐색 알고리즘 설정</strong></span><a href="#탐색-알고리즘-설정-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>옵션</th>
+      <th>설명</th>
+      <th>기본값</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--nrun</code> / <code class="language-plaintext highlighter-rouge">-n</code></td>
+      <td>LGA (Local Search Genetic Algorithm) 실행 횟수</td>
+      <td><code class="language-plaintext highlighter-rouge">20</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--nev</code> / <code class="language-plaintext highlighter-rouge">-e</code></td>
+      <td>LGA 실행당 최대 평가 횟수</td>
+      <td><code class="language-plaintext highlighter-rouge">2500000</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--ngen</code> / <code class="language-plaintext highlighter-rouge">-g</code></td>
+      <td>세대 수 (Generations)</td>
+      <td><code class="language-plaintext highlighter-rouge">42000</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--psize</code> / <code class="language-plaintext highlighter-rouge">-p</code></td>
+      <td>LGA 인구 크기</td>
+      <td><code class="language-plaintext highlighter-rouge">150</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--lsrat</code></td>
+      <td>Local Search 비율 (%)</td>
+      <td><code class="language-plaintext highlighter-rouge">100</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--crat</code></td>
+      <td>Crossover 비율 (%)</td>
+      <td><code class="language-plaintext highlighter-rouge">80</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--mrat</code></td>
+      <td>Mutation 비율 (%)</td>
+      <td><code class="language-plaintext highlighter-rouge">2</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--dmov</code></td>
+      <td>최대 LGA 이동 변위 (<code class="language-plaintext highlighter-rouge">Å</code>)</td>
+      <td><code class="language-plaintext highlighter-rouge">6.0</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--dang</code></td>
+      <td>최대 LGA 회전 변위 (<code class="language-plaintext highlighter-rouge">°</code>)</td>
+      <td><code class="language-plaintext highlighter-rouge">90.0</code></td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h3 id="스코어링-및-에너지-설정-1"><span class="me-2"><strong>스코어링 및 에너지 설정</strong></span><a href="#스코어링-및-에너지-설정-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>옵션</th>
+      <th>설명</th>
+      <th>기본값</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--smooth</code></td>
+      <td>van der Waals 상호작용의 스무딩 파라미터 (<code class="language-plaintext highlighter-rouge">Å</code>)</td>
+      <td><code class="language-plaintext highlighter-rouge">0.5</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--elecmindist</code></td>
+      <td>최소 전기적 상호작용 거리 (<code class="language-plaintext highlighter-rouge">Å</code>)</td>
+      <td><code class="language-plaintext highlighter-rouge">0.01</code></td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h3 id="기타-설정-1"><span class="me-2"><strong>기타 설정</strong></span><a href="#기타-설정-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>옵션</th>
+      <th>설명</th>
+      <th>기본값</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--devnum</code> / <code class="language-plaintext highlighter-rouge">-D</code></td>
+      <td>CUDA/OpenCL 디바이스 번호</td>
+      <td><code class="language-plaintext highlighter-rouge">1</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--seed</code> / <code class="language-plaintext highlighter-rouge">-s</code></td>
+      <td>랜덤 시드 (세 개의 정수 지정 가능)</td>
+      <td><code class="language-plaintext highlighter-rouge">시간, PID</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--autostop</code></td>
+      <td>수렴 기준에 따라 자동 정지 여부</td>
+      <td><code class="language-plaintext highlighter-rouge">1</code> (활성)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--asfreq</code></td>
+      <td>AutoStop 테스트 빈도 (세대 수)</td>
+      <td><code class="language-plaintext highlighter-rouge">5</code></td>
+    </tr>
+  </tbody>
+</table></div>
+
+<hr />
+
 <h2 id="5-옵션-활용-예시"><span class="me-2">5. 옵션 활용 예시</span><a href="#5-옵션-활용-예시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="--nrun-조정"><span class="me-2"><strong><code class="language-plaintext highlighter-rouge">--nrun</code> 조정</strong></span><a href="#--nrun-조정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -1326,6 +1732,8 @@ _____|___________|_____|___________|_____|____:____|____:____
 
 <hr />
 
+<p>«««&lt; HEAD</p>
+
 <h2 id="links"><span class="me-2">Links</span><a href="#links" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
@@ -1335,6 +1743,30 @@ _____|___________|_____|___________|_____|____:____|____:____
   <li>결합 격자 맵 생성 도구: <a href="https://github.com/ccsb-scripps/autogrid">https://github.com/ccsb-scripps/autogrid</a></li>
 </ul>
 
+<p>=======</p>
+<h2 id="6-links"><span class="me-2">6. Links</span><a href="#6-links" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ol>
+  <li><strong>Github:</strong> <a href="https://github.com/ccsb-scripps/AutoDock-GPU">https://github.com/ccsb-scripps/AutoDock-GPU</a></li>
+  <li><strong>참고 문헌:</strong> <strong>Accelerating AutoDock4 with GPUs and Gradient-Based Local Search</strong>
+<em>J. Chem. Theory Comput. 2021.</em> DOI: <a href="https://pubs.acs.org/doi/10.1021/acs.jctc.0c01006">https://pubs.acs.org/doi/10.1021/acs.jctc.0c01006</a>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <blockquote>
+              <blockquote>
+                <blockquote>
+                  <p>main</p>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </li>
+</ol>
 
   </div>
 
@@ -1467,7 +1899,7 @@ _____|___________|_____|___________|_____|____:____|____:____
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/labphoto/">인생네컷 on Mars</a>
+          <a href="/posts/autodock-gpu/">Autodock-GPU</a>
         </li>
       
         
@@ -1481,21 +1913,21 @@ _____|___________|_____|___________|_____|____:____|____:____
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/Rosetta-Docking/">RosettaDock-5.0</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/customize-the-favicon/">Customize the Favicon</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/text-and-typography/">Text and Typography</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/write-a-new-post/">Writing a New Post</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/getting-started/">Getting Started</a>
         </li>
       
     </ul>
@@ -1548,11 +1980,6 @@ _____|___________|_____|___________|_____|____:____|____:____
     
     
     
-  
-    
-    
-    
-    
       
         
         
@@ -1561,134 +1988,6 @@ _____|___________|_____|___________|_____|____:____|____:____
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1716,8 +2015,6 @@ _____|___________|_____|___________|_____|____:____|____:____
     
     
     
-      
-    
   
     
     
@@ -1735,12 +2032,113 @@ _____|___________|_____|___________|_____|____:____|____:____
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1775,19 +2173,10 @@ _____|___________|_____|___________|_____|____:____|____:____
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1829,8 +2218,6 @@ _____|___________|_____|___________|_____|____:____|____:____
     
     
     
-      
-    
   
     
     
@@ -1863,11 +2250,58 @@ _____|___________|_____|___________|_____|____:____|____:____
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+      
     
   
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1888,16 +2322,16 @@ _____|___________|_____|___________|_____|____:____|____:____
         <a class="post-tag btn btn-outline-primary" href="/tags/bioinformatics/">Bioinformatics</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/competent-cell/">Competent cell</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/docking/">docking</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/protocol/">Protocol</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/alphafold2/">AlphaFold2</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/competent-cell/">Competent cell</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/favicon/">favicon</a>
@@ -1912,7 +2346,7 @@ _____|___________|_____|___________|_____|____:____|____:____
         <a class="post-tag btn btn-outline-primary" href="/tags/oliognucleotide/">Oliognucleotide</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/protein-folding/">Protein Folding</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
       
     </div>
   </section>
@@ -2068,21 +2502,24 @@ _____|___________|_____|___________|_____|____:____|____:____
 
               <h4 class="pt-0 my-2">RosettaDock-5.0</h4>
               <div class="text-muted">
-                <p>RosettaDock-5.0 개요
+                <p>«««&amp;lt; HEAD
+RosettaDock-5.0 개요
 
   단백질-단백질 복합체 구조 예측.
-  결합 위치의 구조적 변화와 상호작용 에너지 계산.
+  
+    결합 위치의 구조적 변화와 상호작용 에너지 계산.
+  
 
 
+RosettaDock-5.0
 
 
-1. RosettaDock-5.0 Quick Start
-
-입력파일
-
-
-  PDB 파일(.pdb): PyMol을 사용해 두 단백질을 적절한 위치로 배치, 도킹할 각 파트너를 별도의 체인으로 정의.
-  예: 항체(H, L ...</p>
+  RosettaDock은 몬테카를로(Monte Carlo) 기반 다단계 도킹 알고리즘을 사용
+    
+      
+        
+          
+...</p>
               </div>
             </div>
           </a>
@@ -2207,6 +2644,76 @@ _____|___________|_____|___________|_____|____:____|____:____
               
               <!-- The comments switcher -->
 
+  
+  <!-- https://giscus.app/ -->
+<script type="text/javascript">
+  (function () {
+    const origin = 'https://giscus.app';
+    const lightTheme = 'light';
+    const darkTheme = 'dark_dimmed';
+
+    let initTheme = lightTheme;
+    const html = document.documentElement;
+
+    if (
+      (html.hasAttribute('data-mode') &&
+        html.getAttribute('data-mode') === 'dark') ||
+      (!html.hasAttribute('data-mode') &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      initTheme = darkTheme;
+    }
+
+    let lang = 'ko';if (lang.length > 2 && !lang.startsWith('zh')) {
+      lang = lang.slice(0, 2);
+    }
+
+    let giscusAttributes = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'siji3328/siji3328.github.io',
+      'data-repo-id': 'R_kgDONNd0ww',
+      'data-category': 'General',
+      'data-category-id': 'DIC_kwDONNd0w84COIti',
+      'data-mapping': 'pathname',
+      'data-strict' : '0',
+      'data-reactions-enabled': '1',
+      'data-emit-metadata': '0',
+      'data-theme': initTheme,
+      'data-input-position': 'bottom',
+      'data-lang': lang,
+      'data-loading': 'lazy',
+      crossorigin: 'anonymous',
+      async: ''
+    };
+
+    let giscusScript = document.createElement('script');
+    Object.entries(giscusAttributes).forEach(([key, value]) =>
+      giscusScript.setAttribute(key, value)
+    );
+    document.getElementById('tail-wrapper').appendChild(giscusScript);
+
+    addEventListener('message', (event) => {
+      if (
+        event.source === window &&
+        event.data &&
+        event.data.direction === ModeToggle.ID
+      ) {const mode = event.data.message;
+        const theme = mode === ModeToggle.DARK_MODE ? darkTheme : lightTheme;
+
+        const message = {
+          setConfig: {
+            theme: theme
+          }
+        };
+
+        const giscus = document.getElementsByClassName('giscus-frame')[0].contentWindow;
+        giscus.postMessage({ giscus: message }, origin);
+      }
+    });
+  })();
+</script>
+
+
 
             
 
@@ -2299,11 +2806,6 @@ _____|___________|_____|___________|_____|____:____|____:____
     
     
     
-  
-    
-    
-    
-    
       
         
         
@@ -2312,134 +2814,6 @@ _____|___________|_____|___________|_____|____:____|____:____
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2467,8 +2841,6 @@ _____|___________|_____|___________|_____|____:____|____:____
     
     
     
-      
-    
   
     
     
@@ -2486,12 +2858,113 @@ _____|___________|_____|___________|_____|____:____|____:____
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2526,19 +2999,10 @@ _____|___________|_____|___________|_____|____:____|____:____
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2580,8 +3044,6 @@ _____|___________|_____|___________|_____|____:____|____:____
     
     
     
-      
-    
   
     
     
@@ -2614,11 +3076,58 @@ _____|___________|_____|___________|_____|____:____|____:____
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+      
     
   
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2639,16 +3148,16 @@ _____|___________|_____|___________|_____|____:____|____:____
         <a class="post-tag btn btn-outline-primary" href="/tags/bioinformatics/">Bioinformatics</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/competent-cell/">Competent cell</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/docking/">docking</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/protocol/">Protocol</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/alphafold2/">AlphaFold2</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/competent-cell/">Competent cell</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/favicon/">favicon</a>
@@ -2663,7 +3172,7 @@ _____|___________|_____|___________|_____|____:____|____:____
         <a class="post-tag btn btn-outline-primary" href="/tags/oliognucleotide/">Oliognucleotide</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/protein-folding/">Protein Folding</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
       
     </div>
   </section>

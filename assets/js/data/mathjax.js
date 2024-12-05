@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 MathJax = {
   tex: {inlineMath: [
       ['$', '$'],
@@ -20,20 +21,20 @@ layout: compress
   See: <https://docs.mathjax.org/en/latest/options/input/tex.html#tex-options>
 {%- endcomment -%}
 
+=======
+>>>>>>> main
 MathJax = {
-  tex: {
-    {%- comment -%} start/end delimiter pairs for in-line math {%- endcomment -%}
-    inlineMath: [
+  tex: {inlineMath: [
       ['$', '$'],
       ['\\(', '\\)']
-    ],
-    {%- comment -%} start/end delimiter pairs for display math {%- endcomment -%}
-    displayMath: [
+    ],displayMath: [
       ['$$', '$$'],
       ['\\[', '\\]']
-    ],
-    {%- comment -%} equation numbering {%- endcomment -%}
-    tags: 'ams'
+    ],tags: 'ams'
   }
 };
+<<<<<<< HEAD
+>>>>>>> main
+=======
+
 >>>>>>> main

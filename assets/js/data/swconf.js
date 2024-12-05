@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 const swconf = {
   
     cacheName: 'chirpy-1733275908',resources: [
@@ -29,24 +30,28 @@ permalink: '/:path/swconf.js'
 # Note that this file will be fetched by the ServiceWorker, so it will not be cached.
 ---
 
+=======
+>>>>>>> main
 const swconf = {
-  {% if site.pwa.cache.enabled %}
-    cacheName: 'chirpy-{{ "now" | date: "%s" }}',
+  
+    cacheName: 'chirpy-1733363963',resources: [
+      '/assets/css/jekyll-theme-chirpy.css',
+      '/',
+      
+        '/categories/',
+      
+        '/tags/',
+      
+        '/archives/',
+      
+        '/about/',
+      
 
-    {%- comment -%} Resources added to the cache during PWA installation. {%- endcomment -%}
-    resources: [
-      '{{ "/assets/css/:THEME.css" | replace: ':THEME', site.theme | relative_url }}',
-      '{{ "/" | relative_url }}',
-      {% for tab in site.tabs %}
-        '{{- tab.url | relative_url -}}',
-      {% endfor %}
-
-      {% assign cache_list = site.static_files | where: 'swcache', true %}
-      {% for file in cache_list %}
-        '{{ file.path | relative_url }}'{%- unless forloop.last -%},{%- endunless -%}
-      {% endfor %}
+      
+      
     ],
 
+<<<<<<< HEAD
     interceptor: {
       {%- comment -%} URLs containing the following paths will not be cached. {%- endcomment -%}
       paths: [
@@ -63,10 +68,17 @@ const swconf = {
           'https://{{ site.analytics.goatcounter.id }}.goatcounter.com/counter/'
         {% endif %}
 >>>>>>> main
+=======
+    interceptor: {paths: [
+        
+      ],urlPrefixes: [
+        
+>>>>>>> main
       ]
     },
 
     purge: false
+<<<<<<< HEAD
 <<<<<<< HEAD
   
 };
@@ -76,4 +88,9 @@ const swconf = {
     purge: true
   {% endif %}
 };
+>>>>>>> main
+=======
+  
+};
+
 >>>>>>> main

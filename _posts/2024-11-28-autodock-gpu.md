@@ -9,6 +9,7 @@ tags: [Bioinformatics, docking]
 
 
 ---
+<<<<<<< HEAD
 
 ## AutoDock-GPU 특징
 
@@ -24,6 +25,18 @@ tags: [Bioinformatics, docking]
 - **Receptor Grid Map 파일** (`.fld`): AutoGrid에서 생성된 수용체의 결합 정보.
 - **Ligand 파일** (`.pdbqt`): Meeko를 사용해 준비한 리간드 파일.
 - 기타 옵션에 따라 필요에 따라 추가 파일을 준비합니다.
+=======
+# AutoDock-GPU 
+
+- AutoDock-GPU는 Scripps Research의 Forli 연구소에서 개발된 소프트웨어로, AutoDock 4.2.6의 OpenCL 및 CUDA 가속 버전
+
+## 1. AutoDock-GPU Quick Start
+
+### **필요한 파일**
+- **Receptor Grid Map 파일** (`.fld`): `--ffile`로 지정.
+- **Ligand 파일** (`.pdbqt`): `--lfile`로 지정.
+- 기타 옵션에 따라 필요에 따라 추가 파일을 준비.
+>>>>>>> main
 
 ### **기본 실행 명령**
 
@@ -47,7 +60,12 @@ tags: [Bioinformatics, docking]
 > /mnt/c/Users/MARS/AutoDock-GPU/output/soyoon/1ac8_log.txt
 ```
 ---
+<<<<<<< HEAD
 ## 2. 출력 파일
+=======
+
+## 2. 결과 파일  
+>>>>>>> main
 
 ### **결과 파일 (`.dlg`)**
 - **경로:** `--resnam` 옵션에서 지정한 위치.
@@ -65,7 +83,11 @@ tags: [Bioinformatics, docking]
 
 ---
 
+<<<<<<< HEAD
 ## 3. 출력 파일 해석 예시
+=======
+## 3. 결과 파일 해석
+>>>>>>> main
 
 ### **출력 파일 주요 섹션**
 
@@ -88,6 +110,58 @@ tags: [Bioinformatics, docking]
   _____|___________|_____|___________|_____|____:____|____:____
      1 |     -8.31 |  10 |     -8.05 |  10 |##########
   ```
+
+---
+## 4. 주요 옵션 설명
+
+### **입력 파일 관련**
+
+| 옵션               | 설명                                            | 기본값        |
+|--------------------|------------------------------------------------|--------------|
+| `--lfile` / `-L`  | Ligand 파일 경로 (`.pdbqt` 파일)                 | 필수         |
+| `--ffile` / `-M`  | Receptor Grid Map 파일 경로 (`.fld` 파일)        | 필수         |
+| `--flexres` / `-F`| Flexible residue 파일 경로 (`.pdbqt`)            | 없음         |
+| `--filelist` / `-B`| Batch 모드로 처리할 파일 리스트 지정             | 없음         |
+
+### **출력 관련**
+
+| 옵션                | 설명                                            | 기본값        |
+|---------------------|------------------------------------------------|--------------|
+| `--resnam` / `-N`   | 출력 로그 파일 이름                             | Ligand 이름  |
+| `--contact_analysis`| 도킹 후 거리를 기반으로 한 접촉 분석 수행         | `0` (비활성) |
+| `--dlgoutput`       | `.dlg` 형식 결과 파일 생성 여부                  | `1` (활성)   |
+| `--xmloutput`       | `.xml` 형식 결과 파일 생성 여부                  | `1` (활성)   |
+| `--output-cluster-poses` | 클러스터링 결과에서 출력할 자세 수            | `0` (모두)   |
+
+### **탐색 알고리즘 설정**
+
+| 옵션                | 설명                                            | 기본값        |
+|---------------------|------------------------------------------------|--------------|
+| `--nrun` / `-n`     | LGA (Local Search Genetic Algorithm) 실행 횟수  | `20`         |
+| `--nev` / `-e`      | LGA 실행당 최대 평가 횟수                       | `2500000`    |
+| `--ngen` / `-g`     | 세대 수 (Generations)                           | `42000`      |
+| `--psize` / `-p`    | LGA 인구 크기                                   | `150`        |
+| `--lsrat`           | Local Search 비율 (%)                           | `100`        |
+| `--crat`            | Crossover 비율 (%)                              | `80`         |
+| `--mrat`            | Mutation 비율 (%)                               | `2`          |
+| `--dmov`            | 최대 LGA 이동 변위 (`Å`)                        | `6.0`        |
+| `--dang`            | 최대 LGA 회전 변위 (`°`)                        | `90.0`       |
+
+### **스코어링 및 에너지 설정**
+
+| 옵션                | 설명                                            | 기본값        |
+|---------------------|------------------------------------------------|--------------|
+| `--smooth`          | van der Waals 상호작용의 스무딩 파라미터 (`Å`)   | `0.5`        |
+| `--elecmindist`     | 최소 전기적 상호작용 거리 (`Å`)                 | `0.01`       |
+
+### **기타 설정**
+
+| 옵션                | 설명                                            | 기본값        |
+|---------------------|------------------------------------------------|--------------|
+| `--devnum` / `-D`   | CUDA/OpenCL 디바이스 번호                        | `1`          |
+| `--seed` / `-s`     | 랜덤 시드 (세 개의 정수 지정 가능)               | `시간, PID`  |
+| `--autostop`        | 수렴 기준에 따라 자동 정지 여부                   | `1` (활성)   |
+| `--asfreq`          | AutoStop 테스트 빈도 (세대 수)                   | `5`          |
 
 ---
 
@@ -178,6 +252,7 @@ tags: [Bioinformatics, docking]
 
 ---
 
+<<<<<<< HEAD
 
 ## Links
 
@@ -186,3 +261,10 @@ tags: [Bioinformatics, docking]
 - 리간드 및 수용체 준비 도구: <https://github.com/forlilab/meeko>
 - 결합 격자 맵 생성 도구: <https://github.com/ccsb-scripps/autogrid>
 
+=======
+## 6. Links
+
+1. **Github:** <https://github.com/ccsb-scripps/AutoDock-GPU>
+2. **참고 문헌:** **Accelerating AutoDock4 with GPUs and Gradient-Based Local Search**
+*J. Chem. Theory Comput. 2021.* DOI: <https://pubs.acs.org/doi/10.1021/acs.jctc.0c01006>
+>>>>>>> main

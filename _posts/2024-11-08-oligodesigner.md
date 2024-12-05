@@ -8,7 +8,11 @@ tags: [Oliognucleotide, Oiligo designer]
 
 # Oligo designer (PCA를 위한) 코드 사용법 
 
-중첩되는 서열의 Tm 값을 만족하는 조각을 만들어 PCA(Polymerase Chain Assembly) 프라이머를 설계하는 Python 코드 사용법을 설명합니다.
+
+- 중첩되는 서열의 Tm 값을 만족하는 조각을 만들어 PCA(Polymerase Chain Assembly) 프라이머를 설계하는 Python 코드
+- Oligo Design Tool을 직접 실행해 보세요. 클릭 ->
+[![Colab에서 실행하기](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/siji3328/OligoDesign/blob/master/oligodesigner.ipynb)
+
 
 ### 1. Tm(녹는 온도) 계산 (Wallace 공식)
 

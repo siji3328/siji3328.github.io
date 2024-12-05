@@ -1,6 +1,7 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
+<<<<<<< HEAD
   <id>http://localhost:4000/</id>
   <title>ttoyoon</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
@@ -14,22 +15,82 @@
     href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator>
   <rights> © 2024 So-Yoon Park </rights>
+=======
+  <id>/</id>
+  <title>ttoyoon</title>
+  <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
+  <updated>2024-12-05T09:59:21+08:00</updated>
+  <author>
+    <name>your_full_name</name>
+    <uri>/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="en"
+    href="/"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator>
+  <rights> © 2024 your_full_name </rights>
+>>>>>>> main
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
 
   
   <entry>
+<<<<<<< HEAD
     <title>RosettaDock-5.0</title>
     <link href="http://localhost:4000/posts/Rosetta-Docking/" rel="alternate" type="text/html" title="RosettaDock-5.0" />
+=======
+    <title>Competent cell, Inoue Method</title>
+    <link href="/posts/inoue/" rel="alternate" type="text/html" title="Competent cell, Inoue Method" />
+    <published>2024-12-04T00:00:00+08:00</published>
+  
+    <updated>2024-12-04T17:44:57+08:00</updated>
+  
+    <id>/posts/inoue/</id>
+    <content type="text/html" src="/posts/inoue/" />
+    <author>
+      <name>your_full_name</name>
+    </author>
+
+  
+    
+    <category term="Lab protocol" />
+    
+  
+
+  <summary>The Inoue Method for Preparation and Transformation of Competent E. Coli: “Ultra-Competent” Cells
+
+Joseph Sambrook and David W. Russell
+This protocol was adapted from Molecular Cloning, 3rd edition, by Joseph Sambrook and David W. Russell.
+Cold Spring Harbor Laboratory Press, Cold Spring Harbor, NY, USA, 2001.
+
+
+
+INTRODUCTION
+This protocol reproducibly generates competent cultures of E. coli th...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>RosettaDock-5.0</title>
+    <link href="/posts/Rosetta-Docking/" rel="alternate" type="text/html" title="RosettaDock-5.0" />
+>>>>>>> main
     <published>2024-12-01T00:00:00+08:00</published>
   
     <updated>2024-12-01T00:00:00+08:00</updated>
   
+<<<<<<< HEAD
     <id>http://localhost:4000/posts/Rosetta-Docking/</id>
     <content type="text/html" src="http://localhost:4000/posts/Rosetta-Docking/" />
     <author>
       <name>So-Yoon Park</name>
+=======
+    <id>/posts/Rosetta-Docking/</id>
+    <content type="text/html" src="/posts/Rosetta-Docking/" />
+    <author>
+      <name>your_full_name</name>
+>>>>>>> main
     </author>
 
   
@@ -40,26 +101,51 @@
     
   
 
+<<<<<<< HEAD
   <summary>RosettaDock-5.0 개요
 
   단백질-단백질 복합체 구조 예측.
   결합 위치의 구조적 변화와 상호작용 에너지 계산.
+=======
+  <summary>RosettaDock-5.0
+
+
+  RosettaDock은 몬테카를로(Monte Carlo) 기반 다단계 도킹 알고리즘을 사용
+>>>>>>> main
 
 
 
 
 1. RosettaDock-5.0 Quick Start
 
+<<<<<<< HEAD
 입력파일
 
 
   PDB 파일(.pdb): PyMol을 사용해 두 단백질을 적절한 위치로 배치, 도킹할 각 파트너를 별도의 체인으로 정의.
   예: 항체(H, L 체인)와 항원(A, B 체인)을 도킹하려면 H-L과 A-B를 각각 하나의 파트너로 설정.
+=======
+입력 파일 준비
+
+  단백질 파트너의 초기 위치를 추정하여 서로의 표면이 마주 보도록 설정.
+  PyMOL을 사용하여 분자를 번역 및 회전 가능:
+    
+      PyMOL 팁:
+        
+          오른쪽 패널에서 “편집 모드” 활성화.
+          Shift + 좌클릭 + 중간 버튼으로 이동 및 회전.
+          File → Export Molecule로 PDB 저장.
+        
+      
+    
+  
+>>>>>>> main
 
 
 기본 실행 명령
 
 
+<<<<<<< HEAD
   -s: 입력 구조 파일(PDB)을 지정.
   -out:path:all: 출력 파일 경로를 지정.
   -nstruct: 생성할 구조의 수를 지정.
@@ -89,21 +175,35 @@
   
 
   <summary>This is a test post.</summary>
+=======
+  -s: 입력 구조 파일(PDB)을 지정합니다....</summary>
+>>>>>>> main
 
   </entry>
 
   
   <entry>
     <title>Oligo designer</title>
+<<<<<<< HEAD
     <link href="http://localhost:4000/posts/oligodesigner/" rel="alternate" type="text/html" title="Oligo designer" />
+=======
+    <link href="/posts/oligodesigner/" rel="alternate" type="text/html" title="Oligo designer" />
+>>>>>>> main
     <published>2024-11-08T00:00:00+08:00</published>
   
     <updated>2024-11-08T00:00:00+08:00</updated>
   
+<<<<<<< HEAD
     <id>http://localhost:4000/posts/oligodesigner/</id>
     <content type="text/html" src="http://localhost:4000/posts/oligodesigner/" />
     <author>
       <name>So-Yoon Park</name>
+=======
+    <id>/posts/oligodesigner/</id>
+    <content type="text/html" src="/posts/oligodesigner/" />
+    <author>
+      <name>your_full_name</name>
+>>>>>>> main
     </author>
 
   
@@ -137,15 +237,26 @@ design_pca_primers 함수는 PCA를 위한 DNA 조각들을 생성하고, 각 �
   
   <entry>
     <title>24년 10월 한국공업화학회</title>
+<<<<<<< HEAD
     <link href="http://localhost:4000/posts/marsmars/" rel="alternate" type="text/html" title="24년 10월 한국공업화학회" />
+=======
+    <link href="/posts/marsmars/" rel="alternate" type="text/html" title="24년 10월 한국공업화학회" />
+>>>>>>> main
     <published>2024-11-08T00:00:00+08:00</published>
   
     <updated>2024-12-04T14:17:24+08:00</updated>
   
+<<<<<<< HEAD
     <id>http://localhost:4000/posts/marsmars/</id>
     <content type="text/html" src="http://localhost:4000/posts/marsmars/" />
     <author>
       <name>So-Yoon Park</name>
+=======
+    <id>/posts/marsmars/</id>
+    <content type="text/html" src="/posts/marsmars/" />
+    <author>
+      <name>your_full_name</name>
+>>>>>>> main
     </author>
 
   
@@ -167,6 +278,7 @@ design_pca_primers 함수는 PCA를 위한 DNA 조각들을 생성하고, 각 �
 
   
   <entry>
+<<<<<<< HEAD
     <title>인생네컷 on Mars</title>
     <link href="http://localhost:4000/posts/labphoto/" rel="alternate" type="text/html" title="인생네컷 on Mars" />
     <published>2024-11-08T00:00:00+08:00</published>
@@ -177,10 +289,23 @@ design_pca_primers 함수는 PCA를 위한 DNA 조각들을 생성하고, 각 �
     <content type="text/html" src="http://localhost:4000/posts/labphoto/" />
     <author>
       <name>So-Yoon Park</name>
+=======
+    <title>Benchling</title>
+    <link href="/posts/benchling/" rel="alternate" type="text/html" title="Benchling" />
+    <published>2024-11-07T00:00:00+08:00</published>
+  
+    <updated>2024-11-07T00:00:00+08:00</updated>
+  
+    <id>/posts/benchling/</id>
+    <content type="text/html" src="/posts/benchling/" />
+    <author>
+      <name>your_full_name</name>
+>>>>>>> main
     </author>
 
   
     
+<<<<<<< HEAD
     <category term="Blogging" />
     
     <category term="Lab Photo" />
@@ -192,6 +317,31 @@ design_pca_primers 함수는 PCA를 위한 DNA 조각들을 생성하고, 각 �
 
 
 꽤나 젊은 MARS 대원들</summary>
+=======
+    <category term="Bioinformatics" />
+    
+    <category term="Sequence analysis" />
+    
+  
+
+  <summary>Benchling의 주요 기능
+
+1. 서열 분석 및 클로닝 설계
+
+
+  DNA, RNA, 단백질 서열의 분석 및 설계.
+  클로닝 설계 및 플라스미드 맵 생성.
+  데이터 시각화 및 통계 분석 도구 제공.
+
+
+2. 용이한 데이터 관리
+
+
+  다양한 실험 데이터를 한 곳에서 연결.
+  실험 데이터를 팀원과 공유하거나 협업 가능.
+  언제 어디서든 접속 가능.
+  데이터 백업 및 보안 관리.</summary>
+>>>>>>> main
 
   </entry>
 
