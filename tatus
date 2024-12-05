@@ -1,0 +1,215 @@
+[33mcommit 117470a9cb7693f6980caac5a4f99149dfaff23c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: siji3328 <siji3328@hanmail.net>
+Date:   Wed Dec 4 18:44:57 2024 +0900
+
+    Your commit message
+
+[33mcommit 2a683b817a000bab8113a029780acb2f970bc9df[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: siji3328 <siji3328@hanmail.net>
+Date:   Wed Dec 4 18:42:43 2024 +0900
+
+    Your commit message
+
+[33mcommit 32b2d7c0c4fa319163f7a510bc7da0875c822091[m
+Author: siji3328 <siji3328@hanmail.net>
+Date:   Wed Dec 4 18:33:30 2024 +0900
+
+    Add GitHub Actions workflow for deployment
+
+[33mcommit e63c850b17a430d2b56d38fcf7671bb6dac8432e[m
+Author: siji3328 <siji3328@hanmail.net>
+Date:   Wed Dec 4 15:17:24 2024 +0900
+
+    Update posts and config
+
+[33mcommit 9ff377a134c7a55bbe3cff3777e2d899b3292ce8[m
+Author: biosyp <71966009+siji3328@users.noreply.github.com>
+Date:   Mon Nov 11 19:52:18 2024 +0900
+
+    Update README.md
+    
+    Signed-off-by: biosyp <71966009+siji3328@users.noreply.github.com>
+
+[33mcommit a656c89d27204ca00643c0d8198a862a47e10c4f[m
+Author: biosyp <71966009+siji3328@users.noreply.github.com>
+Date:   Mon Nov 11 19:48:11 2024 +0900
+
+    chore: add x86_64-linux platform to Gemfile.lock for GitHub Actions compatibility
+
+[33mcommit 56a9f30d94c2d70e5562ab7e640b043eb168a9da[m
+Author: biosyp <71966009+siji3328@users.noreply.github.com>
+Date:   Mon Nov 11 15:45:56 2024 +0900
+
+    Create jekyll.yml
+    
+    Signed-off-by: biosyp <71966009+siji3328@users.noreply.github.com>
+
+[33mcommit d51345e29754ba92a0c2fd6534bbd248ff298331[m
+Author: Cotes Chung <11371340+cotes2020@users.noreply.github.com>
+Date:   Fri Nov 8 22:35:18 2024 +0800
+
+    ci: reduce unnecessary pr-filter runs (#2033)
+    
+    - Checking the repository of the PR is more effective than checking the label to identify bot-initiated PRs
+    - This change also allows more flexible PR body definitions for developers with write access to the repository
+
+[33mcommit 2f844978aac587a8631c16d6907f24a8af6035a3[m
+Author: Cotes Chung <11371340+cotes2020@users.noreply.github.com>
+Date:   Fri Nov 8 22:15:31 2024 +0800
+
+    chore: change stale label to `inactive`
+
+[33mcommit 42dea8ee2986ee609ca6f2643a03bd29bd5456a3[m
+Author: Supreeth Mysore Venkatesh <supreethmv@gmail.com>
+Date:   Sun Nov 3 17:45:59 2024 +0100
+
+    build(deps): update `wdm` gem version for compatibility (#2028)
+
+[33mcommit 86b13c917f8f9477b10766fb621cbe987c025203[m
+Author: Alexander Fuks <kungfux@users.noreply.github.com>
+Date:   Fri Nov 1 14:39:03 2024 +0400
+
+    chore: improve feed interoperability (#2024)
+
+[33mcommit 4ef3cd8efc90518cc56b4e92306f81aa36feee70[m
+Author: Cotes Chung <11371340+cotes2020@users.noreply.github.com>
+Date:   Tue Oct 29 22:56:32 2024 +0800
+
+    ci: improve workflow triggers (#2017)
+    
+    - Unchain commit-lint and CI
+      - Even if a commit does not meet the CI path filter, it still needs to lint the commit message.
+    - Unchain PR filter and CI
+      - The CI workflow needs to be triggered when the commits in a pull request are modified.
+    - Allow manual publishing
+      - Sometimes `semantic-release` will error out due to commit messages referencing discussions, but this does not affect the final RubyGems/GitHub Release. In such cases, manual triggering of the publish process is needed to complete the remaining publishing steps.
+
+[33mcommit c7f967529c294f9622f142470406f2be43ea4d35[m
+Author: Cotes Chung <11371340+cotes2020@users.noreply.github.com>
+Date:   Sat Oct 26 16:58:07 2024 +0800
+
+    ci: skip test for invalid PRs (#2013)
+
+[33mcommit 74ed06321c1730dc788af3306b80a0f1739510d4[m
+Author: Cotes Chung <11371340+cotes2020@users.noreply.github.com>
+Date:   Fri Oct 25 19:48:11 2024 +0800
+
+    ci: block invalid pull requests (#2010)
+
+[33mcommit d4f7f39ece2d8feaca963b8bfba331268b28811e[m
+Author: Cotes Chung <11371340+cotes2020@users.noreply.github.com>
+Date:   Tue Oct 22 10:42:07 2024 +0800
+
+    refactor: simplify sidebar animation
+
+[33mcommit c1bd9eb9eece4cf3b7e76d750bcc4108aec63361[m
+Author: Cotes Chung <11371340+cotes2020@users.noreply.github.com>
+Date:   Sun Oct 20 13:47:54 2024 +0800
+
+    refactor: reduce duplicate scss
+
+[33mcommit 6f461132c00c7f7d557e0b865530bb256c1fe5be[m
+Author: Cotes Chung <11371340+cotes2020@users.noreply.github.com>
+Date:   Sat Oct 19 21:13:21 2024 +0800
+
+    refactor: improve toc popup module
+
+[33mcommit 03e302cbf68cc502a2b6bef0726186a0b3ef321c[m
+Author: Alexander Fuks <kungfux@users.noreply.github.com>
+Date:   Sun Oct 13 21:16:25 2024 +0400
+
+    chore: close toc-popup gracefully with Esc key (#1990)
+
+[33mcommit 8a064a5e5a95cd22aa654f7c80da09d107262508[m
+Author: Alexander Fuks <kungfux@users.noreply.github.com>
+Date:   Fri Oct 11 18:32:10 2024 +0400
+
+    feat: show toc on mobile screens (#1964)
+
+[33mcommit 740bd84c51cbb929438ea538ddc942f97d1c1431[m
+Author: Bence Boros <39780892+borosbence@users.noreply.github.com>
+Date:   Tue Oct 1 17:19:39 2024 +0200
+
+    chore(i18n): update hungarian translation (#1976)
+
+[33mcommit 93f616b25d7ed6c4f090c50c8663f8c1f59947f4[m
+Author: Cotes Chung <11371340+cotes2020@users.noreply.github.com>
+Date:   Thu Sep 26 22:30:56 2024 +0800
+
+    fix: pagination error when pinned posts exceed the page size (#1965)
+
+[33mcommit e6b87d28111457cbc2f497866b71d8a2d00e35bc[m
+Author: Alexander Fuks <kungfux@users.noreply.github.com>
+Date:   Tue Sep 24 04:21:34 2024 +0400
+
+    chore: remove `h1` element from site title (#1960)
+
+[33mcommit 73749067c5e94849bea9cd8146ebe4965f7ed894[m
+Merge: fac6116a fd0df832
+Author: semantic-release-bot <semantic-release-bot@martynus.net>
+Date:   Mon Sep 23 11:56:46 2024 +0000
+
+    Merge branch 'production'
+
+[33mcommit fd0df8320f7e4e2849c27f1be0f1232bf46a61bb[m
+Author: semantic-release-bot <semantic-release-bot@martynus.net>
+Date:   Mon Sep 23 11:56:31 2024 +0000
+
+    chore(release): 7.1.1
+    
+    ## [7.1.1](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v7.1.0...v7.1.1) (2024-09-23)
+    
+    ### Bug Fixes
+    
+    * **i18n:** correct fr-FR translations ([#1949](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1949)) ([367262e](https://github.com/cotes2020/jekyll-theme-chirpy/commit/367262e74d1005bddf1328bb2b3a2b9e152c0086))
+    * **pwa:** site baseurl not passed to `app.js` ([#1955](https://github.com/cotes2020/jekyll-theme-chirpy/issues/1955)) ([5a63244](https://github.com/cotes2020/jekyll-theme-chirpy/commit/5a63244721d21b1ad3a0ae83420723a2f0379e8b))
+
+[33mcommit fbcdf8ce85d952c6c3a9824425fe5462f9c0e068[m
+Merge: a784f0a0 fac6116a
+Author: Cotes Chung <11371340+cotes2020@users.noreply.github.com>
+Date:   Mon Sep 23 19:48:06 2024 +0800
+
+    Merge branch 'master' into production
+
+[33mcommit fac6116af1d9836df5220f63c09fdf3d36910795[m
+Author: Cotes Chung <11371340+cotes2020@users.noreply.github.com>
+Date:   Mon Sep 23 19:41:28 2024 +0800
+
+    build(dev-deps): bump 7 dependencies versions
+
+[33mcommit 5a63244721d21b1ad3a0ae83420723a2f0379e8b[m
+Author: Cotes Chung <11371340+cotes2020@users.noreply.github.com>
+Date:   Wed Sep 18 22:32:26 2024 +0800
+
+    fix(pwa): site baseurl not passed to `app.js` (#1955)
+
+[33mcommit 3ab3b844d2ac475c92d5f84afc0259abab9fcbcd[m
+Author: Cotes Chung <11371340+cotes2020@users.noreply.github.com>
+Date:   Wed Sep 18 21:41:08 2024 +0800
+
+    refactor: replace deprecated meta element
+    
+    Replace `apple-mobile-web-app-capable` with `mobile-web-app-capable`
+
+[33mcommit 367262e74d1005bddf1328bb2b3a2b9e152c0086[m
+Author: denis-games <105583649+denis-games@users.noreply.github.com>
+Date:   Mon Sep 16 14:38:46 2024 +0200
+
+    fix(i18n): correct fr-FR translations (#1949)
+    
+    Co-authored-by: Denis Jean <dj@denisjean.fr>
+
+[33mcommit cbc93193e136a2093179640e75699f26bbd58da2[m
+Merge: 8b7dba71 a784f0a0
+Author: semantic-release-bot <semantic-release-bot@martynus.net>
+Date:   Tue Aug 27 07:29:10 2024 +0000
+
+    Merge branch 'production'
+
+[33mcommit a784f0a0f907797104cc5e3b5256151ad4055645[m
+Author: semantic-release-bot <semantic-release-bot@martynus.net>
+Date:   Tue Aug 27 07:28:55 2024 +0000
+
+    chore(release): 7.1.0
+    
+    ## [7.1.0](https://github.com/cotes2020/jekyll-theme-chirpy/compare/v7.0
