@@ -14,7 +14,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="ko" >
+<html lang="en" >
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
@@ -30,23 +30,24 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="Sequence analysis" />
-<meta property="og:locale" content="ko" />
+<meta property="og:title" content="ttoyoon" />
+<meta property="og:locale" content="en" />
 <meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
 <meta property="og:description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
-<link rel="canonical" href="http://localhost:4000/categories/sequence-analysis/" />
-<meta property="og:url" content="http://localhost:4000/categories/sequence-analysis/" />
+<link rel="canonical" href="/page2/" />
+<meta property="og:url" content="/page2/" />
 <meta property="og:site_name" content="ttoyoon" />
 <meta property="og:type" content="website" />
+<link rel="prev" href="/" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Sequence analysis" />
+<meta property="twitter:title" content="ttoyoon" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Sequence analysis","url":"http://localhost:4000/categories/sequence-analysis/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"ttoyoon","url":"/page2/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Sequence analysis | ttoyoon
+  <title>ttoyoon
   </title>
 
   <!--
@@ -111,6 +112,8 @@
 
   
 
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
   
 
   
@@ -236,19 +239,17 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle"><img src="https://chirpy-img.netlify.app/assets/img/favicons/favicon.io" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+    <a href="/" id="avatar" class="rounded-circle"><img src="https://chirpy-img.netlify.app/commons/avatar.jpg" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
     <a class="site-title d-block" href="/">ttoyoon</a>
     <p class="site-subtitle fst-italic mb-0">life on the Mars</p>
   </header>
   <!-- .profile-wrapper -->
 
-
-
   <nav class="flex-column flex-grow-1 w-100 ps-0">
     <ul class="nav">
       <!-- home -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a href="/" class="nav-link">
           <i class="fa-fw fas fa-home"></i>
           <span>HOME</span>
@@ -361,7 +362,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['siji3328','hanmail.net'].join('@')"
+          href="javascript:location.href = 'mailto:' + ['example','domain.com'].join('@')"
           aria-label="email"
           
 
@@ -412,27 +413,9 @@
       
 
       
-        
-          
-            <span>
-              <a href="/">Home</a>
-            </span>
+        <!-- index page -->
+        <span>Home</span>
 
-          
-        
-          
-            <span>
-              <a href="/categories/">Categories</a>
-            </span>
-          
-        
-          
-            
-              <span>Sequence analysis</span>
-            
-
-          
-        
       
     </nav>
     <!-- endof #breadcrumb -->
@@ -442,7 +425,7 @@
     </button>
 
     <div id="topbar-title">
-      Category
+      ttoyoon
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link">
@@ -468,29 +451,123 @@
         <div class="row flex-grow-1">
           <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-              
+              <!-- Refactor the HTML structure -->
 
 
 
-<article class="px-1">
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Change the icon of checkbox -->
+
+
+
+<!-- Handle images -->
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
   
-    
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
 
 
 
-<div id="page-category">
-  <h1 class="ps-lg-2">
-    <i class="far fa-folder-open fa-fw text-muted"></i>
-    Sequence analysis
-    <span class="lead text-muted ps-2">1</span>
-  </h1>
 
-  <ul class="content ps-0">
-    
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/posts/benchling/">Benchling</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
+<!-- return -->
+
+
+
+
+
+
+
+
+
+<!-- Get pinned posts on current page -->
+
+
+
+
+
+
+<!-- Get normal posts on current page -->
+
+
+
+
+
+<div id="post-list" class="flex-grow-1 px-xl-1">
+  
+    <article class="card-wrapper card">
+<<<<<<< HEAD
+      <a href="/posts/RFAA(RoseTTAFold-All-Atom)/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">RFAA (RoseTTAFold-All-Atom)</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>RFAA (RoseTTAFold-All-Atom)
+
+1. Docker 프로그램 실행
+
+  바탕화면에 있는 Docker 아이콘을 더블 클릭하여 Docker 프로그램을 실행합니다.
+
+
+2. 터미널 열기
+
+  바탕화면의 MARS 폴더로 이동한 후, RFAA 폴더를 찾습니다.
+  RFAA 폴더에서 마우스 오른쪽 버튼을 클릭하여 ‘터미널에서 열기’를 선택합니다...</p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -500,22 +577,294 @@
 
 <time
   
-    class="text-muted small text-nowrap"
-  
-  data-ts="1730905200"
+  data-ts="1730908800"
   data-df="ll"
   
 >
   Nov  7, 2024
 </time>
 
-      </li>
-    
-  </ul>
-</div>
 
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Bioinformatics,
+                      Model
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
   
-</article>
+    <article class="card-wrapper card">
+=======
+>>>>>>> main
+      <a href="/posts/AF2(AlphaFold2)/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">AF2 (AlphaFold2)</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>AlphaFold2 (AF2) 사용법
+
+1. AlphaFold2 소개
+AlphaFold2는 단백질 구조 예측을 위한 강력한 AI 모델로, 단백질 서열을 기반으로 3차원 구조를 예측할 수 있습니다.
+
+2. 설치 및 환경 설정
+AlphaFold2를 사용하려면 몇 가지 환경 설정이 필요합니다. 다음 명령어로 환경을 설정할 수 있습니다:
+
+```bash
+예시...</p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1730908800"
+  data-df="ll"
+  
+>
+  Nov  7, 2024
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Bioinformatics,
+                      Model
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/customize-the-favicon/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Customize the Favicon</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>The favicons of Chirpy are placed in the directory assets/img/favicons/. You may want to replace them with your own. The following sections will guide you to create and replace the default favicons...</p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1565454840"
+  data-df="ll"
+  
+>
+  Aug 11, 2019
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Test,
+                      Tutorial
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/write-a-new-post/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Writing a New Post</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>This tutorial will guide you how to write a post in the Chirpy template, and it’s worth reading even if you’ve used Jekyll before, as many features require specific variables to be set.
+
+Naming and...</p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1565244600"
+  data-df="ll"
+  
+>
+  Aug  8, 2019
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Test,
+                      Tutorial
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+</div>
+<!-- #post-list -->
+
+
+  <!-- The paginator for post list on HomgPage. -->
+
+<nav aria-label="Page Navigation">
+  <ul class="pagination align-items-center mt-4 mb-0">
+    <!-- left arrow -->
+    
+
+    <li class="page-item ">
+      <a class="page-link" href="/" aria-label="previous-page">
+        <i class="fas fa-angle-left"></i>
+      </a>
+    </li>
+
+    <!-- page numbers -->
+    
+    
+
+    
+      
+      
+      
+      
+      
+
+      
+
+      
+        <!-- show number -->
+        <li class="page-item ">
+          <a
+            class="page-link"
+            href="/"
+          >1</a>
+        </li>
+      
+    
+      
+      
+      
+      
+      
+
+      
+
+      
+        <!-- show number -->
+        <li class="page-item  active">
+          <a
+            class="page-link"
+            href="/page2"
+          >2</a>
+        </li>
+      
+    
+
+    <!-- mobile pagination -->
+    <li class="page-index align-middle">
+      <span>2</span>
+      <span class="text-muted">/ 2</span>
+    </li>
+
+    <!-- right arrow -->
+    
+
+    <li class="page-item disabled">
+      <a class="page-link" href="#" aria-label="next-page">
+        <i class="fas fa-angle-right"></i>
+      </a>
+    </li>
+  </ul>
+</nav>
+<!-- .pagination -->
+
+
+
 
             
           </main>
@@ -546,21 +895,18 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/autodock-gpu/">Autodock-GPU</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/oligodesigner/">Oligo designer</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
+<<<<<<< HEAD
+          <a href="/posts/labphoto/">인생네컷 on Mars</a>
+=======
           <a href="/posts/inoue/">Competent cell, Inoue Method</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/customize-the-favicon/">Customize the Favicon</a>
+>>>>>>> main
         </li>
       
         
@@ -574,9 +920,26 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/customize-the-favicon/">Customize the Favicon</a>
+          <a href="/posts/text-and-typography/">Text and Typography</a>
         </li>
       
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/write-a-new-post/">Writing a New Post</a>
+        </li>
+      
+<<<<<<< HEAD
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/getting-started/">Getting Started</a>
+        </li>
+      
+=======
+>>>>>>> main
     </ul>
   </section>
   <!-- #access-lastmod -->
@@ -627,6 +990,8 @@
     
     
     
+<<<<<<< HEAD
+=======
       
         
         
@@ -648,6 +1013,7 @@
     
       
     
+>>>>>>> main
   
     
     
@@ -672,6 +1038,16 @@
     
     
     
+<<<<<<< HEAD
+=======
+      
+    
+>>>>>>> main
+  
+    
+    
+    
+    
       
     
   
@@ -679,8 +1055,6 @@
     
     
     
-      
-    
   
     
     
@@ -701,6 +1075,8 @@
     
     
     
+<<<<<<< HEAD
+=======
   
     
     
@@ -716,46 +1092,11 @@
     
     
     
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
+>>>>>>> main
       
         
         
 
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -782,23 +1123,7 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
+<<<<<<< HEAD
       
         
         
@@ -820,24 +1145,14 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
     
+=======
+>>>>>>> main
   
     
     
     
-    
-      
     
   
     
@@ -865,6 +1180,11 @@
     
     
     
+<<<<<<< HEAD
+      
+    
+=======
+>>>>>>> main
   
     
     
@@ -876,6 +1196,42 @@
     
     
       
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+<<<<<<< HEAD
+      
+    
+=======
+>>>>>>> main
+  
+    
+    
+    
     
   
     
@@ -917,6 +1273,68 @@
     
     
     
+<<<<<<< HEAD
+      
+    
+=======
+>>>>>>> main
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+<<<<<<< HEAD
+      
+    
+=======
+>>>>>>> main
   
     
     
@@ -955,6 +1373,14 @@
     
     
     
+<<<<<<< HEAD
+  
+    
+    
+    
+    
+=======
+>>>>>>> main
       
         
         
@@ -969,6 +1395,12 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/bioinformatics/">Bioinformatics</a>
       
         
+<<<<<<< HEAD
+        <a class="post-tag btn btn-outline-primary" href="/tags/docking/">docking</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
+=======
         <a class="post-tag btn btn-outline-primary" href="/tags/competent-cell/">Competent cell</a>
       
         
@@ -976,11 +1408,18 @@
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/protocol/">Protocol</a>
+>>>>>>> main
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/alphafold2/">AlphaFold2</a>
       
         
+<<<<<<< HEAD
+        <a class="post-tag btn btn-outline-primary" href="/tags/competent-cell/">Competent cell</a>
+      
+        
+=======
+>>>>>>> main
         <a class="post-tag btn btn-outline-primary" href="/tags/favicon/">favicon</a>
       
         
@@ -993,7 +1432,11 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/oliognucleotide/">Oliognucleotide</a>
       
         
+<<<<<<< HEAD
+        <a class="post-tag btn btn-outline-primary" href="/tags/protein-folding/">Protein Folding</a>
+=======
         <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
+>>>>>>> main
       
     </div>
   </section>
@@ -1023,7 +1466,7 @@
     <time>2024</time>
 
     
-      <a href="https://twitter.com/username">So-Yoon Park</a>.
+      <a href="https://twitter.com/username">your_full_name</a>.
     
 
     
@@ -1099,6 +1542,8 @@
     
     
     
+<<<<<<< HEAD
+=======
       
         
         
@@ -1120,6 +1565,7 @@
     
       
     
+>>>>>>> main
   
     
     
@@ -1144,6 +1590,16 @@
     
     
     
+<<<<<<< HEAD
+=======
+      
+    
+>>>>>>> main
+  
+    
+    
+    
+    
       
     
   
@@ -1151,8 +1607,6 @@
     
     
     
-      
-    
   
     
     
@@ -1173,6 +1627,8 @@
     
     
     
+<<<<<<< HEAD
+=======
   
     
     
@@ -1188,46 +1644,11 @@
     
     
     
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
+>>>>>>> main
       
         
         
 
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1254,23 +1675,7 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
+<<<<<<< HEAD
       
         
         
@@ -1292,24 +1697,14 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
     
+=======
+>>>>>>> main
   
     
     
     
-    
-      
     
   
     
@@ -1337,6 +1732,11 @@
     
     
     
+<<<<<<< HEAD
+      
+    
+=======
+>>>>>>> main
   
     
     
@@ -1348,6 +1748,42 @@
     
     
       
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+<<<<<<< HEAD
+      
+    
+=======
+>>>>>>> main
+  
+    
+    
+    
     
   
     
@@ -1389,6 +1825,68 @@
     
     
     
+<<<<<<< HEAD
+      
+    
+=======
+>>>>>>> main
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+<<<<<<< HEAD
+      
+    
+=======
+>>>>>>> main
   
     
     
@@ -1427,6 +1925,14 @@
     
     
     
+<<<<<<< HEAD
+  
+    
+    
+    
+    
+=======
+>>>>>>> main
       
         
         
@@ -1441,6 +1947,12 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/bioinformatics/">Bioinformatics</a>
       
         
+<<<<<<< HEAD
+        <a class="post-tag btn btn-outline-primary" href="/tags/docking/">docking</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
+=======
         <a class="post-tag btn btn-outline-primary" href="/tags/competent-cell/">Competent cell</a>
       
         
@@ -1448,11 +1960,18 @@
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/protocol/">Protocol</a>
+>>>>>>> main
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/alphafold2/">AlphaFold2</a>
       
         
+<<<<<<< HEAD
+        <a class="post-tag btn btn-outline-primary" href="/tags/competent-cell/">Competent cell</a>
+      
+        
+=======
+>>>>>>> main
         <a class="post-tag btn btn-outline-primary" href="/tags/favicon/">favicon</a>
       
         
@@ -1465,7 +1984,11 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/oliognucleotide/">Oliognucleotide</a>
       
         
+<<<<<<< HEAD
+        <a class="post-tag btn btn-outline-primary" href="/tags/protein-folding/">Protein Folding</a>
+=======
         <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
+>>>>>>> main
       
     </div>
   </section>
@@ -1525,6 +2048,10 @@
 <!-- layout specified -->
 
 
+  
+
+  
+
 
 
 
@@ -1574,9 +2101,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
 
 
 
@@ -1584,7 +2118,7 @@
 
 
 
-<script src="/assets/js/dist/misc.min.js"></script>
+<script src="/assets/js/dist/home.min.js"></script>
 
 
 
