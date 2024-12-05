@@ -1,10 +1,11 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
+<<<<<<< HEAD
   <id>http://localhost:4000/</id>
   <title>ttoyoon</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-12-05T13:59:52+08:00</updated>
+  <updated>2024-12-04T17:02:19+08:00</updated>
   <author>
     <name>So-Yoon Park</name>
     <uri>http://localhost:4000/</uri>
@@ -14,22 +15,41 @@
     href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator>
   <rights> © 2024 So-Yoon Park </rights>
+=======
+  <id>/</id>
+  <title>ttoyoon</title>
+  <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
+  <updated>2024-12-05T09:59:21+08:00</updated>
+  <author>
+    <name>your_full_name</name>
+    <uri>/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="en"
+    href="/"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator>
+  <rights> © 2024 your_full_name </rights>
+>>>>>>> main
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
 
   
   <entry>
+<<<<<<< HEAD
+    <title>RosettaDock-5.0</title>
+    <link href="http://localhost:4000/posts/Rosetta-Docking/" rel="alternate" type="text/html" title="RosettaDock-5.0" />
+=======
     <title>Competent cell, Inoue Method</title>
-    <link href="http://localhost:4000/posts/inoue/" rel="alternate" type="text/html" title="Competent cell, Inoue Method" />
+    <link href="/posts/inoue/" rel="alternate" type="text/html" title="Competent cell, Inoue Method" />
     <published>2024-12-04T00:00:00+08:00</published>
   
-    <updated>2024-12-04T00:00:00+08:00</updated>
+    <updated>2024-12-04T17:44:57+08:00</updated>
   
-    <id>http://localhost:4000/posts/inoue/</id>
-    <content type="text/html" src="http://localhost:4000/posts/inoue/" />
+    <id>/posts/inoue/</id>
+    <content type="text/html" src="/posts/inoue/" />
     <author>
-      <name>So-Yoon Park</name>
+      <name>your_full_name</name>
     </author>
 
   
@@ -54,15 +74,23 @@ This protocol reproducibly generates competent cultures of E. coli th...</summar
   
   <entry>
     <title>RosettaDock-5.0</title>
-    <link href="http://localhost:4000/posts/Rosetta-Docking/" rel="alternate" type="text/html" title="RosettaDock-5.0" />
+    <link href="/posts/Rosetta-Docking/" rel="alternate" type="text/html" title="RosettaDock-5.0" />
+>>>>>>> main
     <published>2024-12-01T00:00:00+08:00</published>
   
-    <updated>2024-12-04T17:04:29+08:00</updated>
+    <updated>2024-12-01T00:00:00+08:00</updated>
   
+<<<<<<< HEAD
     <id>http://localhost:4000/posts/Rosetta-Docking/</id>
     <content type="text/html" src="http://localhost:4000/posts/Rosetta-Docking/" />
     <author>
       <name>So-Yoon Park</name>
+=======
+    <id>/posts/Rosetta-Docking/</id>
+    <content type="text/html" src="/posts/Rosetta-Docking/" />
+    <author>
+      <name>your_full_name</name>
+>>>>>>> main
     </author>
 
   
@@ -73,58 +101,109 @@ This protocol reproducibly generates competent cultures of E. coli th...</summar
     
   
 
-  <summary>«««&amp;amp;lt; HEAD
-RosettaDock-5.0 개요
+<<<<<<< HEAD
+  <summary>RosettaDock-5.0 개요
 
   단백질-단백질 복합체 구조 예측.
-  
-    결합 위치의 구조적 변화와 상호작용 에너지 계산.
-  
-
-
-RosettaDock-5.0
+  결합 위치의 구조적 변화와 상호작용 에너지 계산.
+=======
+  <summary>RosettaDock-5.0
 
 
   RosettaDock은 몬테카를로(Monte Carlo) 기반 다단계 도킹 알고리즘을 사용
-    
-      
-        
-          
-            
-              
-                
-                  main
-                
-              
-            
-          
-        
-      
-    
-  
+>>>>>>> main
 
 
 
 
 1. RosettaDock-5.0 Quick Start
-«««&amp;amp;lt; HEAD
 
-입력파...</summary>
+<<<<<<< HEAD
+입력파일
+
+
+  PDB 파일(.pdb): PyMol을 사용해 두 단백질을 적절한 위치로 배치, 도킹할 각 파트너를 별도의 체인으로 정의.
+  예: 항체(H, L 체인)와 항원(A, B 체인)을 도킹하려면 H-L과 A-B를 각각 하나의 파트너로 설정.
+=======
+입력 파일 준비
+
+  단백질 파트너의 초기 위치를 추정하여 서로의 표면이 마주 보도록 설정.
+  PyMOL을 사용하여 분자를 번역 및 회전 가능:
+    
+      PyMOL 팁:
+        
+          오른쪽 패널에서 “편집 모드” 활성화.
+          Shift + 좌클릭 + 중간 버튼으로 이동 및 회전.
+          File → Export Molecule로 PDB 저장.
+        
+      
+    
+  
+>>>>>>> main
+
+
+기본 실행 명령
+
+
+<<<<<<< HEAD
+  -s: 입력 구조 파일(PDB)을 지정.
+  -out:path:all: 출력 파일 경로를 지정.
+  -nstruct: 생성할 구조의 수를 지정.
+
+
+./bin/docking_protocol.default.linuxgccrelease \
+  -...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Test Post</title>
+    <link href="http://localhost:4000/posts/test/" rel="alternate" type="text/html" title="Test Post" />
+    <published>2024-11-11T00:00:00+08:00</published>
+  
+    <updated>2024-11-11T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/test/</id>
+    <content type="text/html" src="http://localhost:4000/posts/test/" />
+    <author>
+      <name>So-Yoon Park</name>
+    </author>
+
+  
+    
+  
+
+  <summary>This is a test post.</summary>
+=======
+  -s: 입력 구조 파일(PDB)을 지정합니다....</summary>
+>>>>>>> main
 
   </entry>
 
   
   <entry>
     <title>Oligo designer</title>
+<<<<<<< HEAD
     <link href="http://localhost:4000/posts/oligodesigner/" rel="alternate" type="text/html" title="Oligo designer" />
+=======
+    <link href="/posts/oligodesigner/" rel="alternate" type="text/html" title="Oligo designer" />
+>>>>>>> main
     <published>2024-11-08T00:00:00+08:00</published>
   
     <updated>2024-11-08T00:00:00+08:00</updated>
   
+<<<<<<< HEAD
     <id>http://localhost:4000/posts/oligodesigner/</id>
     <content type="text/html" src="http://localhost:4000/posts/oligodesigner/" />
     <author>
       <name>So-Yoon Park</name>
+=======
+    <id>/posts/oligodesigner/</id>
+    <content type="text/html" src="/posts/oligodesigner/" />
+    <author>
+      <name>your_full_name</name>
+>>>>>>> main
     </author>
 
   
@@ -137,11 +216,7 @@ RosettaDock-5.0
 
   <summary>Oligo designer (PCA를 위한) 코드 사용법
 
-
-  중첩되는 서열의 Tm 값을 만족하는 조각을 만들어 PCA(Polymerase Chain Assembly) 프라이머를 설계하는 Python 코드
-  Oligo Design Tool을 직접 실행해 보세요. 클릭 -&amp;amp;gt;
-
-
+중첩되는 서열의 Tm 값을 만족하는 조각을 만들어 PCA(Polymerase Chain Assembly) 프라이머를 설계하는 Python 코드 사용법을 설명합니다.
 
 1. Tm(녹는 온도) 계산 (Wallace 공식)
 
@@ -155,22 +230,33 @@ Tm = 2 \times (A + T) + 4 \times (G + C)
 
 2. 프라이머 설계 함수: design_pca_primers
 
-design_pca_primers 함수는 P...</summary>
+design_pca_primers 함수는 PCA를 위한 DNA 조각들을 생성하고, 각 조각의 Tm 값을 확...</summary>
 
   </entry>
 
   
   <entry>
     <title>24년 10월 한국공업화학회</title>
+<<<<<<< HEAD
     <link href="http://localhost:4000/posts/marsmars/" rel="alternate" type="text/html" title="24년 10월 한국공업화학회" />
+=======
+    <link href="/posts/marsmars/" rel="alternate" type="text/html" title="24년 10월 한국공업화학회" />
+>>>>>>> main
     <published>2024-11-08T00:00:00+08:00</published>
   
-    <updated>2024-12-04T17:04:29+08:00</updated>
+    <updated>2024-12-04T14:17:24+08:00</updated>
   
+<<<<<<< HEAD
     <id>http://localhost:4000/posts/marsmars/</id>
     <content type="text/html" src="http://localhost:4000/posts/marsmars/" />
     <author>
       <name>So-Yoon Park</name>
+=======
+    <id>/posts/marsmars/</id>
+    <content type="text/html" src="/posts/marsmars/" />
+    <author>
+      <name>your_full_name</name>
+>>>>>>> main
     </author>
 
   
@@ -192,20 +278,46 @@ design_pca_primers 함수는 P...</summary>
 
   
   <entry>
+<<<<<<< HEAD
+    <title>인생네컷 on Mars</title>
+    <link href="http://localhost:4000/posts/labphoto/" rel="alternate" type="text/html" title="인생네컷 on Mars" />
+    <published>2024-11-08T00:00:00+08:00</published>
+  
+    <updated>2024-12-04T14:17:24+08:00</updated>
+  
+    <id>http://localhost:4000/posts/labphoto/</id>
+    <content type="text/html" src="http://localhost:4000/posts/labphoto/" />
+    <author>
+      <name>So-Yoon Park</name>
+=======
     <title>Benchling</title>
-    <link href="http://localhost:4000/posts/benchling/" rel="alternate" type="text/html" title="Benchling" />
+    <link href="/posts/benchling/" rel="alternate" type="text/html" title="Benchling" />
     <published>2024-11-07T00:00:00+08:00</published>
   
     <updated>2024-11-07T00:00:00+08:00</updated>
   
-    <id>http://localhost:4000/posts/benchling/</id>
-    <content type="text/html" src="http://localhost:4000/posts/benchling/" />
+    <id>/posts/benchling/</id>
+    <content type="text/html" src="/posts/benchling/" />
     <author>
-      <name>So-Yoon Park</name>
+      <name>your_full_name</name>
+>>>>>>> main
     </author>
 
   
     
+<<<<<<< HEAD
+    <category term="Blogging" />
+    
+    <category term="Lab Photo" />
+    
+  
+
+  <summary>아름다운 사진과 함께
+
+
+
+꽤나 젊은 MARS 대원들</summary>
+=======
     <category term="Bioinformatics" />
     
     <category term="Sequence analysis" />
@@ -229,6 +341,7 @@ design_pca_primers 함수는 P...</summary>
   실험 데이터를 팀원과 공유하거나 협업 가능.
   언제 어디서든 접속 가능.
   데이터 백업 및 보안 관리.</summary>
+>>>>>>> main
 
   </entry>
 
