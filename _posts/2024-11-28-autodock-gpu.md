@@ -11,7 +11,7 @@ tags: [Bioinformatics, docking]
 ---
 # AutoDock-GPU 
 
-- AutoDock-GPU는 Scripps Research의 Forli 연구소에서 개발된 소프트웨어로, AutoDock 4.2.6의 OpenCL 및 CUDA 가속 버전
+- AutoDock-GPU는 Scripps Research의 Forli 연구소에서 개발된 소프트웨어로, AutoDock 4.2.6의 OpenCL 및 CUDA 가속 버전입니다. 이 도구는 GPU의 병렬 처리 능력을 활용하여 분자 도킹을 빠르고 효율적으로 수행하며, 특히 대규모의 도킹 작업에도 적합합니다. 
 
 ## 1. AutoDock-GPU Quick Start
 
